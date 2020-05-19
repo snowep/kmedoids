@@ -290,18 +290,23 @@
                 <tr>
                   <th>C1</th>
                   <th>C2</th>
+                  <th>C3</th>
                 </tr>
               </thead>
               <?php
                 do {
                   $Kn_C1 = rand(1,103);
                   $Kn_C2 = rand(1,103);
-                } while ($Kn_C1 == $Kn_C2 && $Kn_C1 == $K_C1 && $Kn_C2 == $K_C2);
+                  $Kn_C3 = rand(1,103);
+                } while (
+                  $Kn_C1 == $Kn_C2 && $Kn_C1 == $Kn_C3 && $Kn_C2 == $Kn_C3 &&
+                  $Kn_C1 == $K_C1 && $Kn_C2 == $K_C2 && $K_C3 == $Kn_C3 );
               ?>
               <tbody>
                 <tr>
                   <td><?php echo $Kn_C1 ?></td>
                   <td><?php echo $Kn_C2 ?></td>
+                  <td><?php echo $Kn_C3 ?></td>
                 </tr>
               </tbody>
             </table>
@@ -332,6 +337,8 @@
                 $data_medoid_init_WBP_C1 = $query_medoid_init_WBP_C1->fetch();
                 $query_medoid_init_WBP_C2 = $db->query("SELECT pelanggan, Daya_WBP_1, Daya_WBP_2, Daya_WBP_3, Daya_WBP_4, Daya_WBP_5, Daya_WBP_6, Daya_WBP_7 FROM tb_training WHERE pelanggan = '".$Kn_C2."'");
                 $data_medoid_init_WBP_C2 = $query_medoid_init_WBP_C2->fetch();
+                $query_medoid_init_WBP_C3 = $db->query("SELECT pelanggan, Daya_WBP_1, Daya_WBP_2, Daya_WBP_3, Daya_WBP_4, Daya_WBP_5, Daya_WBP_6, Daya_WBP_7 FROM tb_training WHERE pelanggan = '".$Kn_C3."'");
+                $data_medoid_init_WBP_C3 = $query_medoid_init_WBP_C3->fetch();
               ?>
               <tbody>
                 <tr>
@@ -352,6 +359,17 @@
                     for ($i=1; $i < 8; $i++) {
                   ?>
                   <td><?php echo $data_medoid_init_WBP_C2[$i] ?></td>
+                  <?php
+                    }
+                  ?>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td><?php echo $data_medoid_init_WBP_C3[0] ?></td>
+                  <?php
+                    for ($i=1; $i < 8; $i++) {
+                  ?>
+                  <td><?php echo $data_medoid_init_WBP_C3[$i] ?></td>
                   <?php
                     }
                   ?>
@@ -385,6 +403,8 @@
                 $data_medoid_init_LWBP_C1 = $query_medoid_init_LWBP_C1->fetch();
                 $query_medoid_init_LWBP_C2 = $db->query("SELECT pelanggan, Daya_LWBP_1, Daya_LWBP_2, Daya_LWBP_3, Daya_LWBP_4, Daya_LWBP_5, Daya_LWBP_6, Daya_LWBP_7 FROM tb_training WHERE pelanggan = '".$Kn_C2."'");
                 $data_medoid_init_LWBP_C2 = $query_medoid_init_LWBP_C2->fetch();
+                $query_medoid_init_LWBP_C3 = $db->query("SELECT pelanggan, Daya_LWBP_1, Daya_LWBP_2, Daya_LWBP_3, Daya_LWBP_4, Daya_LWBP_5, Daya_LWBP_6, Daya_LWBP_7 FROM tb_training WHERE pelanggan = '".$Kn_C3."'");
+                $data_medoid_init_LWBP_C3 = $query_medoid_init_LWBP_C3->fetch();
               ?>
               <tbody>
                 <tr>
@@ -409,6 +429,17 @@
                     }
                   ?>
                 </tr>
+                <tr>
+                  <td>2</td>
+                  <td><?php echo $data_medoid_init_LWBP_C3[0] ?></td>
+                  <?php
+                    for ($i=1; $i < 8; $i++) {
+                  ?>
+                  <td><?php echo $data_medoid_init_LWBP_C3[$i] ?></td>
+                  <?php
+                    }
+                  ?>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -424,6 +455,7 @@
                 <tr>
                   <th>C1</th>
                   <th>C2</th>
+                  <th>C3</th>
                 </tr>
               </thead>
               <tbody>
@@ -452,17 +484,30 @@
                         pow($fetch_data[11]-$data_medoid_init_WBP_C2[6], 2) + pow($fetch_data[12]-$data_medoid_init_LWBP_C2[6], 2)+
                         pow($fetch_data[13]-$data_medoid_init_WBP_C2[7], 2) + pow($fetch_data[14]-$data_medoid_init_LWBP_C2[7], 2)
                       );
+                    $DC1C3 =
+                      sqrt(
+                        pow($fetch_data[1]-$data_medoid_init_WBP_C3[1], 2) + pow($fetch_data[2]-$data_medoid_init_LWBP_C3[1], 2)+
+                        pow($fetch_data[3]-$data_medoid_init_WBP_C3[2], 2) + pow($fetch_data[4]-$data_medoid_init_LWBP_C3[2], 2)+
+                        pow($fetch_data[5]-$data_medoid_init_WBP_C3[3], 2) + pow($fetch_data[6]-$data_medoid_init_LWBP_C3[3], 2)+
+                        pow($fetch_data[7]-$data_medoid_init_WBP_C3[4], 2) + pow($fetch_data[8]-$data_medoid_init_LWBP_C3[4], 2)+
+                        pow($fetch_data[9]-$data_medoid_init_WBP_C3[5], 2) + pow($fetch_data[10]-$data_medoid_init_LWBP_C3[5], 2)+
+                        pow($fetch_data[11]-$data_medoid_init_WBP_C3[6], 2) + pow($fetch_data[12]-$data_medoid_init_LWBP_C3[6], 2)+
+                        pow($fetch_data[13]-$data_medoid_init_WBP_C3[7], 2) + pow($fetch_data[14]-$data_medoid_init_LWBP_C3[7], 2)
+                      );
                       //DC1C1 dan DC1C2 variable masuk ke database
 
-                      if ($DC1C1 < $DC1C2) {
+                      if (min($DC1C1, $DC1C2, $DC1C3) == $DC1C1) {
                         $C = 'C1';
-                      } else {
+                      } elseif (min($DC1C1, $DC1C2, $DC1C3) == $DC1C) {
                         $C = 'C2';
+                      } else {
+                        $C = 'C3';
                       }
-                      $query_update_C_before = $db->query("UPDATE tb_training SET C2DC1='$DC1C1', C2DC2='$DC1C2', C_after='$C' WHERE pelanggan='$fetch_data[0]'");
+                      $query_update_C_before = $db->query("UPDATE tb_training SET C3DC1='$DC1C1', C3DC2='$DC1C2', C3DC3='$DC1C3', C_after='$C' WHERE pelanggan='$fetch_data[0]'");
                       $cost_new_DC1C1 += $DC1C1;
                       $cost_new_DC1C2 += $DC1C2;
-                      $cost_new_total = $cost_new_DC1C1 + $cost_new_DC1C2;
+                      $cost_new_DC1C3 += $DC1C3;
+                      $cost_new_total = $cost_new_DC1C1 + $cost_new_DC1C2 + $cost_new_DC1C3;
                   }
                   $query_update_hasil = $db->query("UPDATE tb_training SET hasil='1' WHERE C_before=C_after");
                   $query_update_C = $db->query("UPDATE tb_training SET C_before=C_after");
@@ -477,6 +522,7 @@
                 <tr>
                   <td><?php echo $cost_new_DC1C1 ?></td>
                   <td><?php echo $cost_new_DC1C2 ?></td>
+                  <td><?php echo $cost_new_DC1C3 ?></td>
                 </tr>
                 <tr>
                   <th>Total Cost</th>
@@ -510,6 +556,8 @@
             $total_data_anggota_C1 = $query_anggota_C1->rowCount();
             $query_anggota_C2 = $db->query("SELECT * FROM tb_training WHERE C_after = 'C2'");
             $total_data_anggota_C2 = $query_anggota_C2->rowCount();
+            $query_anggota_C3 = $db->query("SELECT * FROM tb_training WHERE C_after = 'C3'");
+            $total_data_anggota_C3 = $query_anggota_C3->rowCount();
           ?>
           <div class="table-responsive">
             <table class="table table-sm">
@@ -520,12 +568,14 @@
                 <tr>
                   <th>C1</th>
                   <th>C2</th>
+                  <th>C3</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td><?php echo $total_data_anggota_C1 ?></td>
                   <td><?php echo $total_data_anggota_C2 ?></td>
+                  <td><?php echo $total_data_anggota_C3 ?></td>
                 </tr>
               </tbody>
             </table>
