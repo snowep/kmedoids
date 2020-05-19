@@ -26,7 +26,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="2_cluster.php">2 Cluster</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="3_cluster.php">3 Cluster</a>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
