@@ -201,12 +201,14 @@
                 <tr>
                   <th>C1</th>
                   <th>C2</th>
+                  <th>C2</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
                   $cost_init_DC1C1 = 0;
                   $cost_init_DC1C2 = 0;
+                  $cost_init_DC1C3 = 0;
                   $query_data = $db->query("SELECT * FROM tb_training");
                   while ($fetch_data = $query_data->fetch()) {
                     $DC1C1 =
@@ -229,22 +231,36 @@
                         pow($fetch_data[11]-$data_medoid_init_WBP_C2[6], 2) + pow($fetch_data[12]-$data_medoid_init_LWBP_C2[6], 2)+
                         pow($fetch_data[13]-$data_medoid_init_WBP_C2[7], 2) + pow($fetch_data[14]-$data_medoid_init_LWBP_C2[7], 2)
                       );
+                    $DC1C3 =
+                      sqrt(
+                        pow($fetch_data[1]-$data_medoid_init_WBP_C3[1], 2) + pow($fetch_data[2]-$data_medoid_init_LWBP_C3[1], 2)+
+                        pow($fetch_data[3]-$data_medoid_init_WBP_C3[2], 2) + pow($fetch_data[4]-$data_medoid_init_LWBP_C3[2], 2)+
+                        pow($fetch_data[5]-$data_medoid_init_WBP_C3[3], 2) + pow($fetch_data[6]-$data_medoid_init_LWBP_C3[3], 2)+
+                        pow($fetch_data[7]-$data_medoid_init_WBP_C3[4], 2) + pow($fetch_data[8]-$data_medoid_init_LWBP_C3[4], 2)+
+                        pow($fetch_data[9]-$data_medoid_init_WBP_C3[5], 2) + pow($fetch_data[10]-$data_medoid_init_LWBP_C3[5], 2)+
+                        pow($fetch_data[11]-$data_medoid_init_WBP_C3[6], 2) + pow($fetch_data[12]-$data_medoid_init_LWBP_C3[6], 2)+
+                        pow($fetch_data[13]-$data_medoid_init_WBP_C3[7], 2) + pow($fetch_data[14]-$data_medoid_init_LWBP_C3[7], 2)
+                      );
                       //DC1C1 dan DC1C2 variable masuk ke database
 
-                      if ($DC1C1 < $DC1C2) {
+                      if (min($DC1C1, $DC1C2, $DC1C3) == $DC1C1) {
                         $C = 'C1';
-                      } else {
+                      } elseif (min($DC1C1, $DC1C2, $DC1C3) == $DC1C) {
                         $C = 'C2';
+                      } else {
+                        $C = 'C3';
                       }
-                      $query_update_C_before = $db->query("UPDATE tb_training SET C2DC1='$DC1C1', C2DC2='$DC1C2', C_before='$C' WHERE pelanggan='$fetch_data[0]'");
+                      $query_update_C_before = $db->query("UPDATE tb_training SET C3DC1='$DC1C1', C3DC2='$DC1C2', C3DC3='$DC1C3', C_before='$C' WHERE pelanggan='$fetch_data[0]'");
                       $cost_init_DC1C1 += $DC1C1;
                       $cost_init_DC1C2 += $DC1C2;
-                      $cost_init_total = $cost_init_DC1C1 + $cost_init_DC1C2;
+                      $cost_init_DC1C3 += $DC1C3;
+                      $cost_init_total = $cost_init_DC1C1 + $cost_init_DC1C2 + $cost_init_DC1C3;
                   }
                 ?>
                 <tr>
                   <td><?php echo $cost_init_DC1C1 ?></td>
                   <td><?php echo $cost_init_DC1C2 ?></td>
+                  <td><?php echo $cost_init_DC1C3 ?></td>
                 </tr>
                 <tr>
                   <th>Total Cost</th>
