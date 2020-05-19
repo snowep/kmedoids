@@ -83,6 +83,8 @@
                 $data_medoid_init_WBP_C1 = $query_medoid_init_WBP_C1->fetch();
                 $query_medoid_init_WBP_C2 = $db->query("SELECT pelanggan, Daya_WBP_1, Daya_WBP_2, Daya_WBP_3, Daya_WBP_4, Daya_WBP_5, Daya_WBP_6, Daya_WBP_7 FROM tb_training WHERE pelanggan = '".$K_C2."'");
                 $data_medoid_init_WBP_C2 = $query_medoid_init_WBP_C2->fetch();
+                $query_medoid_init_WBP_C3 = $db->query("SELECT pelanggan, Daya_WBP_1, Daya_WBP_2, Daya_WBP_3, Daya_WBP_4, Daya_WBP_5, Daya_WBP_6, Daya_WBP_7 FROM tb_training WHERE pelanggan = '".$K_C3."'");
+                $data_medoid_init_WBP_C3 = $query_medoid_init_WBP_C3->fetch();
               ?>
               <tbody>
                 <tr>
@@ -103,6 +105,17 @@
                     for ($i=1; $i < 8; $i++) {
                   ?>
                   <td><?php echo $data_medoid_init_WBP_C2[$i] ?></td>
+                  <?php
+                    }
+                  ?>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td><?php echo $data_medoid_init_WBP_C3[0] ?></td>
+                  <?php
+                    for ($i=1; $i < 8; $i++) {
+                  ?>
+                  <td><?php echo $data_medoid_init_WBP_C3[$i] ?></td>
                   <?php
                     }
                   ?>
