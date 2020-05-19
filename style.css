@@ -1,0 +1,4 @@
+.table tbody td, .table thead th, .table tbody th {
+  vertical-align: middle!important;
+  text-align: center;
+}
