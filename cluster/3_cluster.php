@@ -44,7 +44,7 @@
 
                 do {
                   $K_C1 = rand(1,103);
-                  $K_C2 = rand(1,103)
+                  $K_C2 = rand(1,103);
                   $K_C3 = rand(1,103);
                 } while ($K_C1 == $K_C2 && $K_C1 == $K_C3 && $K_C2 == $K_C3);
               ?>
@@ -176,7 +176,7 @@
                   ?>
                 </tr>
                 <tr>
-                  <td>2</td>
+                  <td>3</td>
                   <td><?php echo $data_medoid_init_LWBP_C3[0] ?></td>
                   <?php
                     for ($i=1; $i < 8; $i++) {
@@ -196,7 +196,7 @@
             <table class="table table-sm">
               <thead class="thead-dark">
                 <tr>
-                  <th colspan="2">Jarak Centroid</th>
+                  <th colspan="3">Jarak Centroid</th>
                 </tr>
                 <tr>
                   <th>C1</th>
@@ -245,7 +245,7 @@
 
                       if (min($DC1C1, $DC1C2, $DC1C3) == $DC1C1) {
                         $C = 'C1';
-                      } elseif (min($DC1C1, $DC1C2, $DC1C3) == $DC1C) {
+                      } elseif (min($DC1C1, $DC1C2, $DC1C3) == $DC1C2) {
                         $C = 'C2';
                       } else {
                         $C = 'C3';
@@ -264,7 +264,7 @@
                 </tr>
                 <tr>
                   <th>Total Cost</th>
-                  <th><?php echo $cost_init_total ?></th>
+                  <th colspan="2"><?php echo $cost_init_total ?></th>
                 </tr>
               </tbody>
             </table>
@@ -364,7 +364,7 @@
                   ?>
                 </tr>
                 <tr>
-                  <td>2</td>
+                  <td>3</td>
                   <td><?php echo $data_medoid_init_WBP_C3[0] ?></td>
                   <?php
                     for ($i=1; $i < 8; $i++) {
@@ -430,7 +430,7 @@
                   ?>
                 </tr>
                 <tr>
-                  <td>2</td>
+                  <td>3</td>
                   <td><?php echo $data_medoid_init_LWBP_C3[0] ?></td>
                   <?php
                     for ($i=1; $i < 8; $i++) {
@@ -450,7 +450,7 @@
             <table class="table table-sm">
               <thead class="thead-dark">
                 <tr>
-                  <th colspan="2">Jarak Centroid</th>
+                  <th colspan="3">Jarak Centroid</th>
                 </tr>
                 <tr>
                   <th>C1</th>
@@ -462,6 +462,7 @@
                 <?php
                   $cost_new_DC1C1 = 0;
                   $cost_new_DC1C2 = 0;
+                  $cost_new_DC1C3 = 0;
                   $query_data = $db->query("SELECT * FROM tb_training");
                   while ($fetch_data = $query_data->fetch()) {
                     $DC1C1 =
@@ -498,7 +499,7 @@
 
                       if (min($DC1C1, $DC1C2, $DC1C3) == $DC1C1) {
                         $C = 'C1';
-                      } elseif (min($DC1C1, $DC1C2, $DC1C3) == $DC1C) {
+                      } elseif (min($DC1C1, $DC1C2, $DC1C3) == $DC1C2) {
                         $C = 'C2';
                       } else {
                         $C = 'C3';
@@ -526,7 +527,7 @@
                 </tr>
                 <tr>
                   <th>Total Cost</th>
-                  <th><?php echo $cost_new_total ?></th>
+                  <th colspan="2"><?php echo $cost_new_total ?></th>
                 </tr>
               </tbody>
             </table>
@@ -563,7 +564,7 @@
             <table class="table table-sm">
               <thead class="thead-dark">
                 <tr>
-                  <th colspan="2">Anggota Cluster</th>
+                  <th colspan="3">Anggota Cluster</th>
                 </tr>
                 <tr>
                   <th>C1</th>
