@@ -35,22 +35,24 @@
                 <tr>
                   <th>C1</th>
                   <th>C2</th>
+                  <th>C3</th>
                 </tr>
               </thead>
               <?php
-                $query_update_init = $db->query("UPDATE tb_training SET C2DC1='0', C2DC2='0', C_before='', C_after='', hasil='0'");
+                $query_update_init = $db->query("UPDATE tb_training SET C3DC1='0', C3DC2='0', C3DC3='0', C_before='', C_after='', hasil='0'");
                 $S = 0;
 
                 do {
                   $K_C1 = rand(1,103);
                   $K_C2 = rand(1,103)
                   $K_C3 = rand(1,103);
-                } while ($K_C1 == $K_C2);
+                } while ($K_C1 == $K_C2 && $K_C1 == $K_C3 && $K_C2 == $K_C3);
               ?>
               <tbody>
                 <tr>
                   <td><?php echo $K_C1 ?></td>
                   <td><?php echo $K_C2 ?></td>
+                  <td><?php echo $K_C3 ?></td>
                 </tr>
               </tbody>
             </table>
