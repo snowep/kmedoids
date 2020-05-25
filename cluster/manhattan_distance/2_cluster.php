@@ -1,15 +1,15 @@
-<?php include '../conn.php'; ?>
+<?php include '../../conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css">
   </head>
   <body>
-    <?php include 'cluster_navbar.php'; ?>
+    <?php include 'manhattan_navbar.php'; ?>
     <div class="container-fluid">
       <!-- Row kosong -->
       <div class="row" style="padding-top: 80px;"></div>
@@ -176,46 +176,42 @@
               </thead>
               <tbody>
                 <?php
-                  $cost_init_DC1C1 = 0;
-                  $cost_init_DC1C2 = 0;
+                  $cost_init_C2DC1 = 0;
+                  $cost_init_C2DC2 = 0;
                   $query_data = $db->query("SELECT * FROM tb_training");
                   while ($fetch_data = $query_data->fetch()) {
-                    $DC1C1 =
-                      sqrt(
-                        pow($fetch_data[1]-$data_medoid_init_WBP_C1[1], 2) + pow($fetch_data[2]-$data_medoid_init_LWBP_C1[1], 2)+
-                        pow($fetch_data[3]-$data_medoid_init_WBP_C1[2], 2) + pow($fetch_data[4]-$data_medoid_init_LWBP_C1[2], 2)+
-                        pow($fetch_data[5]-$data_medoid_init_WBP_C1[3], 2) + pow($fetch_data[6]-$data_medoid_init_LWBP_C1[3], 2)+
-                        pow($fetch_data[7]-$data_medoid_init_WBP_C1[4], 2) + pow($fetch_data[8]-$data_medoid_init_LWBP_C1[4], 2)+
-                        pow($fetch_data[9]-$data_medoid_init_WBP_C1[5], 2) + pow($fetch_data[10]-$data_medoid_init_LWBP_C1[5], 2)+
-                        pow($fetch_data[11]-$data_medoid_init_WBP_C1[6], 2) + pow($fetch_data[12]-$data_medoid_init_LWBP_C1[6], 2)+
-                        pow($fetch_data[13]-$data_medoid_init_WBP_C1[7], 2) + pow($fetch_data[14]-$data_medoid_init_LWBP_C1[7], 2)
-                      );
-                    $DC1C2 =
-                      sqrt(
-                        pow($fetch_data[1]-$data_medoid_init_WBP_C2[1], 2) + pow($fetch_data[2]-$data_medoid_init_LWBP_C2[1], 2)+
-                        pow($fetch_data[3]-$data_medoid_init_WBP_C2[2], 2) + pow($fetch_data[4]-$data_medoid_init_LWBP_C2[2], 2)+
-                        pow($fetch_data[5]-$data_medoid_init_WBP_C2[3], 2) + pow($fetch_data[6]-$data_medoid_init_LWBP_C2[3], 2)+
-                        pow($fetch_data[7]-$data_medoid_init_WBP_C2[4], 2) + pow($fetch_data[8]-$data_medoid_init_LWBP_C2[4], 2)+
-                        pow($fetch_data[9]-$data_medoid_init_WBP_C2[5], 2) + pow($fetch_data[10]-$data_medoid_init_LWBP_C2[5], 2)+
-                        pow($fetch_data[11]-$data_medoid_init_WBP_C2[6], 2) + pow($fetch_data[12]-$data_medoid_init_LWBP_C2[6], 2)+
-                        pow($fetch_data[13]-$data_medoid_init_WBP_C2[7], 2) + pow($fetch_data[14]-$data_medoid_init_LWBP_C2[7], 2)
-                      );
+                    $C2DC1 =
+                      ($fetch_data[1]-$data_medoid_init_WBP_C1[1]) + ($fetch_data[2]-$data_medoid_init_LWBP_C1[1])+
+                      ($fetch_data[3]-$data_medoid_init_WBP_C1[2]) + ($fetch_data[4]-$data_medoid_init_LWBP_C1[2])+
+                      ($fetch_data[5]-$data_medoid_init_WBP_C1[3]) + ($fetch_data[6]-$data_medoid_init_LWBP_C1[3])+
+                      ($fetch_data[7]-$data_medoid_init_WBP_C1[4]) + ($fetch_data[8]-$data_medoid_init_LWBP_C1[4])+
+                      ($fetch_data[9]-$data_medoid_init_WBP_C1[5]) + ($fetch_data[10]-$data_medoid_init_LWBP_C1[5])+
+                      ($fetch_data[11]-$data_medoid_init_WBP_C1[6]) + ($fetch_data[12]-$data_medoid_init_LWBP_C1[6])+
+                      ($fetch_data[13]-$data_medoid_init_WBP_C1[7]) + ($fetch_data[14]-$data_medoid_init_LWBP_C1[7]);
+                    $C2DC2 =
+                      ($fetch_data[1]-$data_medoid_init_WBP_C2[1]) + ($fetch_data[2]-$data_medoid_init_LWBP_C2[1])+
+                      ($fetch_data[3]-$data_medoid_init_WBP_C2[2]) + ($fetch_data[4]-$data_medoid_init_LWBP_C2[2])+
+                      ($fetch_data[5]-$data_medoid_init_WBP_C2[3]) + ($fetch_data[6]-$data_medoid_init_LWBP_C2[3])+
+                      ($fetch_data[7]-$data_medoid_init_WBP_C2[4]) + ($fetch_data[8]-$data_medoid_init_LWBP_C2[4])+
+                      ($fetch_data[9]-$data_medoid_init_WBP_C2[5]) + ($fetch_data[10]-$data_medoid_init_LWBP_C2[5])+
+                      ($fetch_data[11]-$data_medoid_init_WBP_C2[6]) + ($fetch_data[12]-$data_medoid_init_LWBP_C2[6])+
+                      ($fetch_data[13]-$data_medoid_init_WBP_C2[7]) + ($fetch_data[14]-$data_medoid_init_LWBP_C2[7]);
                       //DC1C1 dan DC1C2 variable masuk ke database
 
-                      if ($DC1C1 < $DC1C2) {
+                      if ($C2DC1 < $C2DC2) {
                         $C = 'C1';
                       } else {
                         $C = 'C2';
                       }
-                      $query_update_C_before = $db->query("UPDATE tb_training SET C2DC1='$DC1C1', C2DC2='$DC1C2', C_before='$C' WHERE pelanggan='$fetch_data[0]'");
-                      $cost_init_DC1C1 += $DC1C1;
-                      $cost_init_DC1C2 += $DC1C2;
-                      $cost_init_total = $cost_init_DC1C1 + $cost_init_DC1C2;
+                      $query_update_C_before = $db->query("UPDATE tb_training SET C2DC1='$C2DC1', C2DC2='$C2DC2', C_before='$C' WHERE pelanggan='$fetch_data[0]'");
+                      $cost_init_C2DC1 += $C2DC1;
+                      $cost_init_C2DC2 += $C2DC2;
+                      $cost_init_total = abs($cost_init_C2DC1) + abs($cost_init_C2DC2);
                   }
                 ?>
                 <tr>
-                  <td><?php echo $cost_init_DC1C1 ?></td>
-                  <td><?php echo $cost_init_DC1C2 ?></td>
+                  <td><?php echo number_format(abs($cost_init_C2DC1), 3) ?></td>
+                  <td><?php echo number_format(abs($cost_init_C2DC2), 3) ?></td>
                 </tr>
                 <tr>
                   <th>Total Cost</th>
@@ -251,7 +247,7 @@
                 do {
                   $Kn_C1 = rand(1,103);
                   $Kn_C2 = rand(1,103);
-                } while ($Kn_C1 == $Kn_C2 && $Kn_C1 == $K_C1 && $Kn_C2 == $K_C2);
+                } while ($K_C1 == $K_C2 && $K_C1 == $Kn_C1 && $K_C1 == $Kn_C2 && $K_C2 == $Kn_C1 && $K_C2 == $Kn_C2 && $Kn_C1 == $Kn_C2);
               ?>
               <tbody>
                 <tr>
@@ -383,41 +379,39 @@
               </thead>
               <tbody>
                 <?php
-                  $cost_new_DC1C1 = 0;
-                  $cost_new_DC1C2 = 0;
+                  $cost_new_C2DC1 = 0;
+                  $cost_new_C2DC2 = 0;
                   $query_data = $db->query("SELECT * FROM tb_training");
                   while ($fetch_data = $query_data->fetch()) {
-                    $DC1C1 =
-                      sqrt(
-                        pow($fetch_data[1]-$data_medoid_init_WBP_C1[1], 2) + pow($fetch_data[2]-$data_medoid_init_LWBP_C1[1], 2)+
-                        pow($fetch_data[3]-$data_medoid_init_WBP_C1[2], 2) + pow($fetch_data[4]-$data_medoid_init_LWBP_C1[2], 2)+
-                        pow($fetch_data[5]-$data_medoid_init_WBP_C1[3], 2) + pow($fetch_data[6]-$data_medoid_init_LWBP_C1[3], 2)+
-                        pow($fetch_data[7]-$data_medoid_init_WBP_C1[4], 2) + pow($fetch_data[8]-$data_medoid_init_LWBP_C1[4], 2)+
-                        pow($fetch_data[9]-$data_medoid_init_WBP_C1[5], 2) + pow($fetch_data[10]-$data_medoid_init_LWBP_C1[5], 2)+
-                        pow($fetch_data[11]-$data_medoid_init_WBP_C1[6], 2) + pow($fetch_data[12]-$data_medoid_init_LWBP_C1[6], 2)+
-                        pow($fetch_data[13]-$data_medoid_init_WBP_C1[7], 2) + pow($fetch_data[14]-$data_medoid_init_LWBP_C1[7], 2)
-                      );
-                    $DC1C2 =
-                      sqrt(
-                        pow($fetch_data[1]-$data_medoid_init_WBP_C2[1], 2) + pow($fetch_data[2]-$data_medoid_init_LWBP_C2[1], 2)+
-                        pow($fetch_data[3]-$data_medoid_init_WBP_C2[2], 2) + pow($fetch_data[4]-$data_medoid_init_LWBP_C2[2], 2)+
-                        pow($fetch_data[5]-$data_medoid_init_WBP_C2[3], 2) + pow($fetch_data[6]-$data_medoid_init_LWBP_C2[3], 2)+
-                        pow($fetch_data[7]-$data_medoid_init_WBP_C2[4], 2) + pow($fetch_data[8]-$data_medoid_init_LWBP_C2[4], 2)+
-                        pow($fetch_data[9]-$data_medoid_init_WBP_C2[5], 2) + pow($fetch_data[10]-$data_medoid_init_LWBP_C2[5], 2)+
-                        pow($fetch_data[11]-$data_medoid_init_WBP_C2[6], 2) + pow($fetch_data[12]-$data_medoid_init_LWBP_C2[6], 2)+
-                        pow($fetch_data[13]-$data_medoid_init_WBP_C2[7], 2) + pow($fetch_data[14]-$data_medoid_init_LWBP_C2[7], 2)
-                      );
+                    $C2DC1 =
+                      ($fetch_data[1]-$data_medoid_init_WBP_C1[1]) + ($fetch_data[2]-$data_medoid_init_LWBP_C1[1])+
+                      ($fetch_data[3]-$data_medoid_init_WBP_C1[2]) + ($fetch_data[4]-$data_medoid_init_LWBP_C1[2])+
+                      ($fetch_data[5]-$data_medoid_init_WBP_C1[3]) + ($fetch_data[6]-$data_medoid_init_LWBP_C1[3])+
+                      ($fetch_data[7]-$data_medoid_init_WBP_C1[4]) + ($fetch_data[8]-$data_medoid_init_LWBP_C1[4])+
+                      ($fetch_data[9]-$data_medoid_init_WBP_C1[5]) + ($fetch_data[10]-$data_medoid_init_LWBP_C1[5])+
+                      ($fetch_data[11]-$data_medoid_init_WBP_C1[6]) + ($fetch_data[12]-$data_medoid_init_LWBP_C1[6])+
+                      ($fetch_data[13]-$data_medoid_init_WBP_C1[7]) + ($fetch_data[14]-$data_medoid_init_LWBP_C1[7]);
+                    $C2DC2 =
+                      ($fetch_data[1]-$data_medoid_init_WBP_C2[1]) + ($fetch_data[2]-$data_medoid_init_LWBP_C2[1])+
+                      ($fetch_data[3]-$data_medoid_init_WBP_C2[2]) + ($fetch_data[4]-$data_medoid_init_LWBP_C2[2])+
+                      ($fetch_data[5]-$data_medoid_init_WBP_C2[3]) + ($fetch_data[6]-$data_medoid_init_LWBP_C2[3])+
+                      ($fetch_data[7]-$data_medoid_init_WBP_C2[4]) + ($fetch_data[8]-$data_medoid_init_LWBP_C2[4])+
+                      ($fetch_data[9]-$data_medoid_init_WBP_C2[5]) + ($fetch_data[10]-$data_medoid_init_LWBP_C2[5])+
+                      ($fetch_data[11]-$data_medoid_init_WBP_C2[6]) + ($fetch_data[12]-$data_medoid_init_LWBP_C2[6])+
+                      ($fetch_data[13]-$data_medoid_init_WBP_C2[7]) + ($fetch_data[14]-$data_medoid_init_LWBP_C2[7]);
                       //DC1C1 dan DC1C2 variable masuk ke database
 
-                      if ($DC1C1 < $DC1C2) {
+                      if ($C2DC1 < $C2DC2) {
                         $C = 'C1';
                       } else {
                         $C = 'C2';
                       }
-                      $query_update_C_before = $db->query("UPDATE tb_training SET C2DC1='$DC1C1', C2DC2='$DC1C2', C_after='$C' WHERE pelanggan='$fetch_data[0]'");
-                      $cost_new_DC1C1 += $DC1C1;
-                      $cost_new_DC1C2 += $DC1C2;
-                      $cost_new_total = $cost_new_DC1C1 + $cost_new_DC1C2;
+                      $query_update_C_before = $db->query("UPDATE tb_training SET C2DC1='$C2DC1', C2DC2='$C2DC2', C_after='$C' WHERE pelanggan='$fetch_data[0]'");
+                      $cost_new_C2DC1 += $C2DC1;
+                      $cost_new_C2DC2 += $C2DC2;
+                      abs($cost_new_C2DC1);
+                      abs($cost_new_C2DC2);
+                      $cost_new_total = abs($cost_new_C2DC1) + abs($cost_new_C2DC2);
                   }
                   $query_update_hasil = $db->query("UPDATE tb_training SET hasil='1' WHERE C_before=C_after");
                   $query_update_C = $db->query("UPDATE tb_training SET C_before=C_after");
@@ -430,8 +424,8 @@
                   $S = $cost_init_total - $cost_new_total;
                 ?>
                 <tr>
-                  <td><?php echo $cost_new_DC1C1 ?></td>
-                  <td><?php echo $cost_new_DC1C2 ?></td>
+                  <td><?php echo number_format(abs($cost_new_C2DC1), 3) ?></td>
+                  <td><?php echo number_format(abs($cost_new_C2DC2), 3)  ?></td>
                 </tr>
                 <tr>
                   <th>Total Cost</th>
@@ -546,8 +540,8 @@
                 $S2 = sqrt($S2 / $total_data_DBI_C2);
                 ?>
                 <tr>
-                  <td><?php echo $S1 ?></td>
-                  <td><?php echo $S2 ?></td>
+                  <td><?php echo number_format($S1, 3) ?></td>
+                  <td><?php echo number_format($S2, 3) ?></td>
                 </tr>
               </tbody>
             </table>
@@ -586,8 +580,8 @@
                     );
                 ?>
                 <tr>
-                  <td><?php echo $M12 ?></td>
-                  <td><?php echo $M21 ?></td>
+                  <td><?php echo number_format($M12, 3) ?></td>
+                  <td><?php echo number_format($M21, 3) ?></td>
                 </tr>
               </tbody>
             </table>
@@ -608,8 +602,8 @@
                   $R21 = ($S2 + $S1) / $M21;
                 ?>
                 <tr>
-                  <td><?php echo $R12 ?></td>
-                  <td><?php echo $R21 ?></td>
+                  <td><?php echo number_format($R12, 3) ?></td>
+                  <td><?php echo number_format($R21, 3) ?></td>
                 </tr>
               </tbody>
             </table>
@@ -630,8 +624,8 @@
                   $D2 = max($R21,0);
                 ?>
                 <tr>
-                  <td><?php echo $D1 ?></td>
-                  <td><?php echo $D2 ?></td>
+                  <td><?php echo number_format($D1, 3) ?></td>
+                  <td><?php echo number_format($D2, 3) ?></td>
                 </tr>
               </tbody>
             </table>
@@ -652,7 +646,7 @@
                   $DB = ($D1 + $D2) / 2;
                 ?>
                 <tr>
-                  <td><?php echo $DB ?></td>
+                  <td><?php echo number_format($DB, 3) ?></td>
                 </tr>
               </tbody>
             </table>
@@ -661,9 +655,9 @@
       </div>
     </div>
   </body>
-  <script type="text/javascript" src="../bootstrap/dist/js/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="../../bootstrap/dist/js/jquery-3.5.1.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script type="text/javascript" src="../../bootstrap/dist/js/bootstrap.bundle.js"></script>
   <script type="text/javascript">
     $('.dropdown-toggle').dropdown();
   </script>
