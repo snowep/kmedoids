@@ -33,6 +33,8 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="2_cluster.php">2 Cluster</a>
           <a class="dropdown-item" href="3_cluster.php">3 Cluster</a>
+          <a class="dropdown-item" href="4_cluster.php">4 Cluster</a>
+          <a class="dropdown-item" href="5_cluster.php">5 Cluster</a>
         </div>
       </li>
     </ul>
