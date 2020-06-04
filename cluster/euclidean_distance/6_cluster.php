@@ -915,27 +915,277 @@
             </table>
           </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-3">
           <div class="table-responsive">
             <table class="table table-sm">
+              <?php
+                $M12 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C1[1]-$data_medoid_init_WBP_C2[1], 2) + pow($data_medoid_init_LWBP_C1[1]-$data_medoid_init_LWBP_C2[1], 2)+
+                    pow($data_medoid_init_WBP_C1[2]-$data_medoid_init_WBP_C2[2], 2) + pow($data_medoid_init_LWBP_C1[2]-$data_medoid_init_LWBP_C2[2], 2)+
+                    pow($data_medoid_init_WBP_C1[3]-$data_medoid_init_WBP_C2[3], 2) + pow($data_medoid_init_LWBP_C1[3]-$data_medoid_init_LWBP_C2[3], 2)+
+                    pow($data_medoid_init_WBP_C1[4]-$data_medoid_init_WBP_C2[4], 2) + pow($data_medoid_init_LWBP_C1[4]-$data_medoid_init_LWBP_C2[4], 2)+
+                    pow($data_medoid_init_WBP_C1[5]-$data_medoid_init_WBP_C2[5], 2) + pow($data_medoid_init_LWBP_C1[5]-$data_medoid_init_LWBP_C2[5], 2)+
+                    pow($data_medoid_init_WBP_C1[6]-$data_medoid_init_WBP_C2[6], 2) + pow($data_medoid_init_LWBP_C1[6]-$data_medoid_init_LWBP_C2[6], 2)+
+                    pow($data_medoid_init_WBP_C1[7]-$data_medoid_init_WBP_C2[7], 2) + pow($data_medoid_init_LWBP_C1[7]-$data_medoid_init_LWBP_C2[7], 2)
+                  );
+                $M13 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C1[1]-$data_medoid_init_WBP_C3[1], 2) + pow($data_medoid_init_LWBP_C1[1]-$data_medoid_init_LWBP_C3[1], 2)+
+                    pow($data_medoid_init_WBP_C1[2]-$data_medoid_init_WBP_C3[2], 2) + pow($data_medoid_init_LWBP_C1[2]-$data_medoid_init_LWBP_C3[2], 2)+
+                    pow($data_medoid_init_WBP_C1[3]-$data_medoid_init_WBP_C3[3], 2) + pow($data_medoid_init_LWBP_C1[3]-$data_medoid_init_LWBP_C3[3], 2)+
+                    pow($data_medoid_init_WBP_C1[4]-$data_medoid_init_WBP_C3[4], 2) + pow($data_medoid_init_LWBP_C1[4]-$data_medoid_init_LWBP_C3[4], 2)+
+                    pow($data_medoid_init_WBP_C1[5]-$data_medoid_init_WBP_C3[5], 2) + pow($data_medoid_init_LWBP_C1[5]-$data_medoid_init_LWBP_C3[5], 2)+
+                    pow($data_medoid_init_WBP_C1[6]-$data_medoid_init_WBP_C3[6], 2) + pow($data_medoid_init_LWBP_C1[6]-$data_medoid_init_LWBP_C3[6], 2)+
+                    pow($data_medoid_init_WBP_C1[7]-$data_medoid_init_WBP_C3[7], 2) + pow($data_medoid_init_LWBP_C1[7]-$data_medoid_init_LWBP_C3[7], 2)
+                  );
+                $M14 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C1[1]-$data_medoid_init_WBP_C4[1], 2) + pow($data_medoid_init_LWBP_C1[1]-$data_medoid_init_LWBP_C4[1], 2)+
+                    pow($data_medoid_init_WBP_C1[2]-$data_medoid_init_WBP_C4[2], 2) + pow($data_medoid_init_LWBP_C1[2]-$data_medoid_init_LWBP_C4[2], 2)+
+                    pow($data_medoid_init_WBP_C1[3]-$data_medoid_init_WBP_C4[3], 2) + pow($data_medoid_init_LWBP_C1[3]-$data_medoid_init_LWBP_C4[3], 2)+
+                    pow($data_medoid_init_WBP_C1[4]-$data_medoid_init_WBP_C4[4], 2) + pow($data_medoid_init_LWBP_C1[4]-$data_medoid_init_LWBP_C4[4], 2)+
+                    pow($data_medoid_init_WBP_C1[5]-$data_medoid_init_WBP_C4[5], 2) + pow($data_medoid_init_LWBP_C1[5]-$data_medoid_init_LWBP_C4[5], 2)+
+                    pow($data_medoid_init_WBP_C1[6]-$data_medoid_init_WBP_C4[6], 2) + pow($data_medoid_init_LWBP_C1[6]-$data_medoid_init_LWBP_C4[6], 2)+
+                    pow($data_medoid_init_WBP_C1[7]-$data_medoid_init_WBP_C4[7], 2) + pow($data_medoid_init_LWBP_C1[7]-$data_medoid_init_LWBP_C4[7], 2)
+                  );
+                $M15 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C1[1]-$data_medoid_init_WBP_C5[1], 2) + pow($data_medoid_init_LWBP_C1[1]-$data_medoid_init_LWBP_C5[1], 2)+
+                    pow($data_medoid_init_WBP_C1[2]-$data_medoid_init_WBP_C5[2], 2) + pow($data_medoid_init_LWBP_C1[2]-$data_medoid_init_LWBP_C5[2], 2)+
+                    pow($data_medoid_init_WBP_C1[3]-$data_medoid_init_WBP_C5[3], 2) + pow($data_medoid_init_LWBP_C1[3]-$data_medoid_init_LWBP_C5[3], 2)+
+                    pow($data_medoid_init_WBP_C1[4]-$data_medoid_init_WBP_C5[4], 2) + pow($data_medoid_init_LWBP_C1[4]-$data_medoid_init_LWBP_C5[4], 2)+
+                    pow($data_medoid_init_WBP_C1[5]-$data_medoid_init_WBP_C5[5], 2) + pow($data_medoid_init_LWBP_C1[5]-$data_medoid_init_LWBP_C5[5], 2)+
+                    pow($data_medoid_init_WBP_C1[6]-$data_medoid_init_WBP_C5[6], 2) + pow($data_medoid_init_LWBP_C1[6]-$data_medoid_init_LWBP_C5[6], 2)+
+                    pow($data_medoid_init_WBP_C1[7]-$data_medoid_init_WBP_C5[7], 2) + pow($data_medoid_init_LWBP_C1[7]-$data_medoid_init_LWBP_C5[7], 2)
+                  );
+                $M21 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C2[1]-$data_medoid_init_WBP_C1[1], 2) + pow($data_medoid_init_LWBP_C2[1]-$data_medoid_init_LWBP_C1[1], 2)+
+                    pow($data_medoid_init_WBP_C2[2]-$data_medoid_init_WBP_C1[2], 2) + pow($data_medoid_init_LWBP_C2[2]-$data_medoid_init_LWBP_C1[2], 2)+
+                    pow($data_medoid_init_WBP_C2[3]-$data_medoid_init_WBP_C1[3], 2) + pow($data_medoid_init_LWBP_C2[3]-$data_medoid_init_LWBP_C1[3], 2)+
+                    pow($data_medoid_init_WBP_C2[4]-$data_medoid_init_WBP_C1[4], 2) + pow($data_medoid_init_LWBP_C2[4]-$data_medoid_init_LWBP_C1[4], 2)+
+                    pow($data_medoid_init_WBP_C2[5]-$data_medoid_init_WBP_C1[5], 2) + pow($data_medoid_init_LWBP_C2[5]-$data_medoid_init_LWBP_C1[5], 2)+
+                    pow($data_medoid_init_WBP_C2[6]-$data_medoid_init_WBP_C1[6], 2) + pow($data_medoid_init_LWBP_C2[6]-$data_medoid_init_LWBP_C1[6], 2)+
+                    pow($data_medoid_init_WBP_C2[7]-$data_medoid_init_WBP_C1[7], 2) + pow($data_medoid_init_LWBP_C2[7]-$data_medoid_init_LWBP_C1[7], 2)
+                  );
+                $M23 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C2[1]-$data_medoid_init_WBP_C3[1], 2) + pow($data_medoid_init_LWBP_C2[1]-$data_medoid_init_LWBP_C3[1], 2)+
+                    pow($data_medoid_init_WBP_C2[2]-$data_medoid_init_WBP_C3[2], 2) + pow($data_medoid_init_LWBP_C2[2]-$data_medoid_init_LWBP_C3[2], 2)+
+                    pow($data_medoid_init_WBP_C2[3]-$data_medoid_init_WBP_C3[3], 2) + pow($data_medoid_init_LWBP_C2[3]-$data_medoid_init_LWBP_C3[3], 2)+
+                    pow($data_medoid_init_WBP_C2[4]-$data_medoid_init_WBP_C3[4], 2) + pow($data_medoid_init_LWBP_C2[4]-$data_medoid_init_LWBP_C3[4], 2)+
+                    pow($data_medoid_init_WBP_C2[5]-$data_medoid_init_WBP_C3[5], 2) + pow($data_medoid_init_LWBP_C2[5]-$data_medoid_init_LWBP_C3[5], 2)+
+                    pow($data_medoid_init_WBP_C2[6]-$data_medoid_init_WBP_C3[6], 2) + pow($data_medoid_init_LWBP_C2[6]-$data_medoid_init_LWBP_C3[6], 2)+
+                    pow($data_medoid_init_WBP_C2[7]-$data_medoid_init_WBP_C3[7], 2) + pow($data_medoid_init_LWBP_C2[7]-$data_medoid_init_LWBP_C3[7], 2)
+                  );
+                $M24 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C2[1]-$data_medoid_init_WBP_C4[1], 2) + pow($data_medoid_init_LWBP_C2[1]-$data_medoid_init_LWBP_C4[1], 2)+
+                    pow($data_medoid_init_WBP_C2[2]-$data_medoid_init_WBP_C4[2], 2) + pow($data_medoid_init_LWBP_C2[2]-$data_medoid_init_LWBP_C4[2], 2)+
+                    pow($data_medoid_init_WBP_C2[3]-$data_medoid_init_WBP_C4[3], 2) + pow($data_medoid_init_LWBP_C2[3]-$data_medoid_init_LWBP_C4[3], 2)+
+                    pow($data_medoid_init_WBP_C2[4]-$data_medoid_init_WBP_C4[4], 2) + pow($data_medoid_init_LWBP_C2[4]-$data_medoid_init_LWBP_C4[4], 2)+
+                    pow($data_medoid_init_WBP_C2[5]-$data_medoid_init_WBP_C4[5], 2) + pow($data_medoid_init_LWBP_C2[5]-$data_medoid_init_LWBP_C4[5], 2)+
+                    pow($data_medoid_init_WBP_C2[6]-$data_medoid_init_WBP_C4[6], 2) + pow($data_medoid_init_LWBP_C2[6]-$data_medoid_init_LWBP_C4[6], 2)+
+                    pow($data_medoid_init_WBP_C2[7]-$data_medoid_init_WBP_C4[7], 2) + pow($data_medoid_init_LWBP_C2[7]-$data_medoid_init_LWBP_C4[7], 2)
+                  );
+                $M25 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C2[1]-$data_medoid_init_WBP_C5[1], 2) + pow($data_medoid_init_LWBP_C2[1]-$data_medoid_init_LWBP_C5[1], 2)+
+                    pow($data_medoid_init_WBP_C2[2]-$data_medoid_init_WBP_C5[2], 2) + pow($data_medoid_init_LWBP_C2[2]-$data_medoid_init_LWBP_C5[2], 2)+
+                    pow($data_medoid_init_WBP_C2[3]-$data_medoid_init_WBP_C5[3], 2) + pow($data_medoid_init_LWBP_C2[3]-$data_medoid_init_LWBP_C5[3], 2)+
+                    pow($data_medoid_init_WBP_C2[4]-$data_medoid_init_WBP_C5[4], 2) + pow($data_medoid_init_LWBP_C2[4]-$data_medoid_init_LWBP_C5[4], 2)+
+                    pow($data_medoid_init_WBP_C2[5]-$data_medoid_init_WBP_C5[5], 2) + pow($data_medoid_init_LWBP_C2[5]-$data_medoid_init_LWBP_C5[5], 2)+
+                    pow($data_medoid_init_WBP_C2[6]-$data_medoid_init_WBP_C5[6], 2) + pow($data_medoid_init_LWBP_C2[6]-$data_medoid_init_LWBP_C5[6], 2)+
+                    pow($data_medoid_init_WBP_C2[7]-$data_medoid_init_WBP_C5[7], 2) + pow($data_medoid_init_LWBP_C2[7]-$data_medoid_init_LWBP_C5[7], 2)
+                  );
+                $M31 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C3[1]-$data_medoid_init_WBP_C1[1], 2) + pow($data_medoid_init_LWBP_C3[1]-$data_medoid_init_LWBP_C1[1], 2)+
+                    pow($data_medoid_init_WBP_C3[2]-$data_medoid_init_WBP_C1[2], 2) + pow($data_medoid_init_LWBP_C3[2]-$data_medoid_init_LWBP_C1[2], 2)+
+                    pow($data_medoid_init_WBP_C3[3]-$data_medoid_init_WBP_C1[3], 2) + pow($data_medoid_init_LWBP_C3[3]-$data_medoid_init_LWBP_C1[3], 2)+
+                    pow($data_medoid_init_WBP_C3[4]-$data_medoid_init_WBP_C1[4], 2) + pow($data_medoid_init_LWBP_C3[4]-$data_medoid_init_LWBP_C1[4], 2)+
+                    pow($data_medoid_init_WBP_C3[5]-$data_medoid_init_WBP_C1[5], 2) + pow($data_medoid_init_LWBP_C3[5]-$data_medoid_init_LWBP_C1[5], 2)+
+                    pow($data_medoid_init_WBP_C3[6]-$data_medoid_init_WBP_C1[6], 2) + pow($data_medoid_init_LWBP_C3[6]-$data_medoid_init_LWBP_C1[6], 2)+
+                    pow($data_medoid_init_WBP_C3[7]-$data_medoid_init_WBP_C1[7], 2) + pow($data_medoid_init_LWBP_C3[7]-$data_medoid_init_LWBP_C1[7], 2)
+                  );
+                $M32 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C3[1]-$data_medoid_init_WBP_C2[1], 2) + pow($data_medoid_init_LWBP_C3[1]-$data_medoid_init_LWBP_C2[1], 2)+
+                    pow($data_medoid_init_WBP_C3[2]-$data_medoid_init_WBP_C2[2], 2) + pow($data_medoid_init_LWBP_C3[2]-$data_medoid_init_LWBP_C2[2], 2)+
+                    pow($data_medoid_init_WBP_C3[3]-$data_medoid_init_WBP_C2[3], 2) + pow($data_medoid_init_LWBP_C3[3]-$data_medoid_init_LWBP_C2[3], 2)+
+                    pow($data_medoid_init_WBP_C3[4]-$data_medoid_init_WBP_C2[4], 2) + pow($data_medoid_init_LWBP_C3[4]-$data_medoid_init_LWBP_C2[4], 2)+
+                    pow($data_medoid_init_WBP_C3[5]-$data_medoid_init_WBP_C2[5], 2) + pow($data_medoid_init_LWBP_C3[5]-$data_medoid_init_LWBP_C2[5], 2)+
+                    pow($data_medoid_init_WBP_C3[6]-$data_medoid_init_WBP_C2[6], 2) + pow($data_medoid_init_LWBP_C3[6]-$data_medoid_init_LWBP_C2[6], 2)+
+                    pow($data_medoid_init_WBP_C3[7]-$data_medoid_init_WBP_C2[7], 2) + pow($data_medoid_init_LWBP_C3[7]-$data_medoid_init_LWBP_C2[7], 2)
+                  );
+                $M34 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C3[1]-$data_medoid_init_WBP_C4[1], 2) + pow($data_medoid_init_LWBP_C3[1]-$data_medoid_init_LWBP_C4[1], 2)+
+                    pow($data_medoid_init_WBP_C3[2]-$data_medoid_init_WBP_C4[2], 2) + pow($data_medoid_init_LWBP_C3[2]-$data_medoid_init_LWBP_C4[2], 2)+
+                    pow($data_medoid_init_WBP_C3[3]-$data_medoid_init_WBP_C4[3], 2) + pow($data_medoid_init_LWBP_C3[3]-$data_medoid_init_LWBP_C4[3], 2)+
+                    pow($data_medoid_init_WBP_C3[4]-$data_medoid_init_WBP_C4[4], 2) + pow($data_medoid_init_LWBP_C3[4]-$data_medoid_init_LWBP_C4[4], 2)+
+                    pow($data_medoid_init_WBP_C3[5]-$data_medoid_init_WBP_C4[5], 2) + pow($data_medoid_init_LWBP_C3[5]-$data_medoid_init_LWBP_C4[5], 2)+
+                    pow($data_medoid_init_WBP_C3[6]-$data_medoid_init_WBP_C4[6], 2) + pow($data_medoid_init_LWBP_C3[6]-$data_medoid_init_LWBP_C4[6], 2)+
+                    pow($data_medoid_init_WBP_C3[7]-$data_medoid_init_WBP_C4[7], 2) + pow($data_medoid_init_LWBP_C3[7]-$data_medoid_init_LWBP_C4[7], 2)
+                  );
+                $M35 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C3[1]-$data_medoid_init_WBP_C5[1], 2) + pow($data_medoid_init_LWBP_C3[1]-$data_medoid_init_LWBP_C5[1], 2)+
+                    pow($data_medoid_init_WBP_C3[2]-$data_medoid_init_WBP_C5[2], 2) + pow($data_medoid_init_LWBP_C3[2]-$data_medoid_init_LWBP_C5[2], 2)+
+                    pow($data_medoid_init_WBP_C3[3]-$data_medoid_init_WBP_C5[3], 2) + pow($data_medoid_init_LWBP_C3[3]-$data_medoid_init_LWBP_C5[3], 2)+
+                    pow($data_medoid_init_WBP_C3[4]-$data_medoid_init_WBP_C5[4], 2) + pow($data_medoid_init_LWBP_C3[4]-$data_medoid_init_LWBP_C5[4], 2)+
+                    pow($data_medoid_init_WBP_C3[5]-$data_medoid_init_WBP_C5[5], 2) + pow($data_medoid_init_LWBP_C3[5]-$data_medoid_init_LWBP_C5[5], 2)+
+                    pow($data_medoid_init_WBP_C3[6]-$data_medoid_init_WBP_C5[6], 2) + pow($data_medoid_init_LWBP_C3[6]-$data_medoid_init_LWBP_C5[6], 2)+
+                    pow($data_medoid_init_WBP_C3[7]-$data_medoid_init_WBP_C5[7], 2) + pow($data_medoid_init_LWBP_C3[7]-$data_medoid_init_LWBP_C5[7], 2)
+                  );
+                $M41 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C4[1]-$data_medoid_init_WBP_C1[1], 2) + pow($data_medoid_init_LWBP_C4[1]-$data_medoid_init_LWBP_C1[1], 2)+
+                    pow($data_medoid_init_WBP_C4[2]-$data_medoid_init_WBP_C1[2], 2) + pow($data_medoid_init_LWBP_C4[2]-$data_medoid_init_LWBP_C1[2], 2)+
+                    pow($data_medoid_init_WBP_C4[3]-$data_medoid_init_WBP_C1[3], 2) + pow($data_medoid_init_LWBP_C4[3]-$data_medoid_init_LWBP_C1[3], 2)+
+                    pow($data_medoid_init_WBP_C4[4]-$data_medoid_init_WBP_C1[4], 2) + pow($data_medoid_init_LWBP_C4[4]-$data_medoid_init_LWBP_C1[4], 2)+
+                    pow($data_medoid_init_WBP_C4[5]-$data_medoid_init_WBP_C1[5], 2) + pow($data_medoid_init_LWBP_C4[5]-$data_medoid_init_LWBP_C1[5], 2)+
+                    pow($data_medoid_init_WBP_C4[6]-$data_medoid_init_WBP_C1[6], 2) + pow($data_medoid_init_LWBP_C4[6]-$data_medoid_init_LWBP_C1[6], 2)+
+                    pow($data_medoid_init_WBP_C4[7]-$data_medoid_init_WBP_C1[7], 2) + pow($data_medoid_init_LWBP_C4[7]-$data_medoid_init_LWBP_C1[7], 2)
+                  );
+                $M42 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C4[1]-$data_medoid_init_WBP_C2[1], 2) + pow($data_medoid_init_LWBP_C4[1]-$data_medoid_init_LWBP_C2[1], 2)+
+                    pow($data_medoid_init_WBP_C4[2]-$data_medoid_init_WBP_C2[2], 2) + pow($data_medoid_init_LWBP_C4[2]-$data_medoid_init_LWBP_C2[2], 2)+
+                    pow($data_medoid_init_WBP_C4[3]-$data_medoid_init_WBP_C2[3], 2) + pow($data_medoid_init_LWBP_C4[3]-$data_medoid_init_LWBP_C2[3], 2)+
+                    pow($data_medoid_init_WBP_C4[4]-$data_medoid_init_WBP_C2[4], 2) + pow($data_medoid_init_LWBP_C4[4]-$data_medoid_init_LWBP_C2[4], 2)+
+                    pow($data_medoid_init_WBP_C4[5]-$data_medoid_init_WBP_C2[5], 2) + pow($data_medoid_init_LWBP_C4[5]-$data_medoid_init_LWBP_C2[5], 2)+
+                    pow($data_medoid_init_WBP_C4[6]-$data_medoid_init_WBP_C2[6], 2) + pow($data_medoid_init_LWBP_C4[6]-$data_medoid_init_LWBP_C2[6], 2)+
+                    pow($data_medoid_init_WBP_C4[7]-$data_medoid_init_WBP_C2[7], 2) + pow($data_medoid_init_LWBP_C4[7]-$data_medoid_init_LWBP_C2[7], 2)
+                  );
+                $M43 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C4[1]-$data_medoid_init_WBP_C3[1], 2) + pow($data_medoid_init_LWBP_C4[1]-$data_medoid_init_LWBP_C3[1], 2)+
+                    pow($data_medoid_init_WBP_C4[2]-$data_medoid_init_WBP_C3[2], 2) + pow($data_medoid_init_LWBP_C4[2]-$data_medoid_init_LWBP_C3[2], 2)+
+                    pow($data_medoid_init_WBP_C4[3]-$data_medoid_init_WBP_C3[3], 2) + pow($data_medoid_init_LWBP_C4[3]-$data_medoid_init_LWBP_C3[3], 2)+
+                    pow($data_medoid_init_WBP_C4[4]-$data_medoid_init_WBP_C3[4], 2) + pow($data_medoid_init_LWBP_C4[4]-$data_medoid_init_LWBP_C3[4], 2)+
+                    pow($data_medoid_init_WBP_C4[5]-$data_medoid_init_WBP_C3[5], 2) + pow($data_medoid_init_LWBP_C4[5]-$data_medoid_init_LWBP_C3[5], 2)+
+                    pow($data_medoid_init_WBP_C4[6]-$data_medoid_init_WBP_C3[6], 2) + pow($data_medoid_init_LWBP_C4[6]-$data_medoid_init_LWBP_C3[6], 2)+
+                    pow($data_medoid_init_WBP_C4[7]-$data_medoid_init_WBP_C3[7], 2) + pow($data_medoid_init_LWBP_C4[7]-$data_medoid_init_LWBP_C3[7], 2)
+                  );
+                $M45 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C4[1]-$data_medoid_init_WBP_C5[1], 2) + pow($data_medoid_init_LWBP_C4[1]-$data_medoid_init_LWBP_C5[1], 2)+
+                    pow($data_medoid_init_WBP_C4[2]-$data_medoid_init_WBP_C5[2], 2) + pow($data_medoid_init_LWBP_C4[2]-$data_medoid_init_LWBP_C5[2], 2)+
+                    pow($data_medoid_init_WBP_C4[3]-$data_medoid_init_WBP_C5[3], 2) + pow($data_medoid_init_LWBP_C4[3]-$data_medoid_init_LWBP_C5[3], 2)+
+                    pow($data_medoid_init_WBP_C4[4]-$data_medoid_init_WBP_C5[4], 2) + pow($data_medoid_init_LWBP_C4[4]-$data_medoid_init_LWBP_C5[4], 2)+
+                    pow($data_medoid_init_WBP_C4[5]-$data_medoid_init_WBP_C5[5], 2) + pow($data_medoid_init_LWBP_C4[5]-$data_medoid_init_LWBP_C5[5], 2)+
+                    pow($data_medoid_init_WBP_C4[6]-$data_medoid_init_WBP_C5[6], 2) + pow($data_medoid_init_LWBP_C4[6]-$data_medoid_init_LWBP_C5[6], 2)+
+                    pow($data_medoid_init_WBP_C4[7]-$data_medoid_init_WBP_C5[7], 2) + pow($data_medoid_init_LWBP_C4[7]-$data_medoid_init_LWBP_C5[7], 2)
+                  );
+                $M51 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C5[1]-$data_medoid_init_WBP_C1[1], 2) + pow($data_medoid_init_LWBP_C5[1]-$data_medoid_init_LWBP_C1[1], 2)+
+                    pow($data_medoid_init_WBP_C5[2]-$data_medoid_init_WBP_C1[2], 2) + pow($data_medoid_init_LWBP_C5[2]-$data_medoid_init_LWBP_C1[2], 2)+
+                    pow($data_medoid_init_WBP_C5[3]-$data_medoid_init_WBP_C1[3], 2) + pow($data_medoid_init_LWBP_C5[3]-$data_medoid_init_LWBP_C1[3], 2)+
+                    pow($data_medoid_init_WBP_C5[4]-$data_medoid_init_WBP_C1[4], 2) + pow($data_medoid_init_LWBP_C5[4]-$data_medoid_init_LWBP_C1[4], 2)+
+                    pow($data_medoid_init_WBP_C5[5]-$data_medoid_init_WBP_C1[5], 2) + pow($data_medoid_init_LWBP_C5[5]-$data_medoid_init_LWBP_C1[5], 2)+
+                    pow($data_medoid_init_WBP_C5[6]-$data_medoid_init_WBP_C1[6], 2) + pow($data_medoid_init_LWBP_C5[6]-$data_medoid_init_LWBP_C1[6], 2)+
+                    pow($data_medoid_init_WBP_C5[7]-$data_medoid_init_WBP_C1[7], 2) + pow($data_medoid_init_LWBP_C5[7]-$data_medoid_init_LWBP_C1[7], 2)
+                  );
+                $M52 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C5[1]-$data_medoid_init_WBP_C2[1], 2) + pow($data_medoid_init_LWBP_C5[1]-$data_medoid_init_LWBP_C2[1], 2)+
+                    pow($data_medoid_init_WBP_C5[2]-$data_medoid_init_WBP_C2[2], 2) + pow($data_medoid_init_LWBP_C5[2]-$data_medoid_init_LWBP_C2[2], 2)+
+                    pow($data_medoid_init_WBP_C5[3]-$data_medoid_init_WBP_C2[3], 2) + pow($data_medoid_init_LWBP_C5[3]-$data_medoid_init_LWBP_C2[3], 2)+
+                    pow($data_medoid_init_WBP_C5[4]-$data_medoid_init_WBP_C2[4], 2) + pow($data_medoid_init_LWBP_C5[4]-$data_medoid_init_LWBP_C2[4], 2)+
+                    pow($data_medoid_init_WBP_C5[5]-$data_medoid_init_WBP_C2[5], 2) + pow($data_medoid_init_LWBP_C5[5]-$data_medoid_init_LWBP_C2[5], 2)+
+                    pow($data_medoid_init_WBP_C5[6]-$data_medoid_init_WBP_C2[6], 2) + pow($data_medoid_init_LWBP_C5[6]-$data_medoid_init_LWBP_C2[6], 2)+
+                    pow($data_medoid_init_WBP_C5[7]-$data_medoid_init_WBP_C2[7], 2) + pow($data_medoid_init_LWBP_C5[7]-$data_medoid_init_LWBP_C2[7], 2)
+                  );
+                $M53 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C5[1]-$data_medoid_init_WBP_C3[1], 2) + pow($data_medoid_init_LWBP_C5[1]-$data_medoid_init_LWBP_C3[1], 2)+
+                    pow($data_medoid_init_WBP_C5[2]-$data_medoid_init_WBP_C3[2], 2) + pow($data_medoid_init_LWBP_C5[2]-$data_medoid_init_LWBP_C3[2], 2)+
+                    pow($data_medoid_init_WBP_C5[3]-$data_medoid_init_WBP_C3[3], 2) + pow($data_medoid_init_LWBP_C5[3]-$data_medoid_init_LWBP_C3[3], 2)+
+                    pow($data_medoid_init_WBP_C5[4]-$data_medoid_init_WBP_C3[4], 2) + pow($data_medoid_init_LWBP_C5[4]-$data_medoid_init_LWBP_C3[4], 2)+
+                    pow($data_medoid_init_WBP_C5[5]-$data_medoid_init_WBP_C3[5], 2) + pow($data_medoid_init_LWBP_C5[5]-$data_medoid_init_LWBP_C3[5], 2)+
+                    pow($data_medoid_init_WBP_C5[6]-$data_medoid_init_WBP_C3[6], 2) + pow($data_medoid_init_LWBP_C5[6]-$data_medoid_init_LWBP_C3[6], 2)+
+                    pow($data_medoid_init_WBP_C5[7]-$data_medoid_init_WBP_C3[7], 2) + pow($data_medoid_init_LWBP_C5[7]-$data_medoid_init_LWBP_C3[7], 2)
+                  );
+                $M54 =
+                  sqrt(
+                    pow($data_medoid_init_WBP_C5[1]-$data_medoid_init_WBP_C4[1], 2) + pow($data_medoid_init_LWBP_C5[1]-$data_medoid_init_LWBP_C4[1], 2)+
+                    pow($data_medoid_init_WBP_C5[2]-$data_medoid_init_WBP_C4[2], 2) + pow($data_medoid_init_LWBP_C5[2]-$data_medoid_init_LWBP_C4[2], 2)+
+                    pow($data_medoid_init_WBP_C5[3]-$data_medoid_init_WBP_C4[3], 2) + pow($data_medoid_init_LWBP_C5[3]-$data_medoid_init_LWBP_C4[3], 2)+
+                    pow($data_medoid_init_WBP_C5[4]-$data_medoid_init_WBP_C4[4], 2) + pow($data_medoid_init_LWBP_C5[4]-$data_medoid_init_LWBP_C4[4], 2)+
+                    pow($data_medoid_init_WBP_C5[5]-$data_medoid_init_WBP_C4[5], 2) + pow($data_medoid_init_LWBP_C5[5]-$data_medoid_init_LWBP_C4[5], 2)+
+                    pow($data_medoid_init_WBP_C5[6]-$data_medoid_init_WBP_C4[6], 2) + pow($data_medoid_init_LWBP_C5[6]-$data_medoid_init_LWBP_C4[6], 2)+
+                    pow($data_medoid_init_WBP_C5[7]-$data_medoid_init_WBP_C4[7], 2) + pow($data_medoid_init_LWBP_C5[7]-$data_medoid_init_LWBP_C4[7], 2)
+                  );
+              ?>
               <thead class="thead-dark">
                 <tr>
                   <th>M<sub>12</sub></th>
                   <th>M<sub>13</sub></th>
                   <th>M<sub>14</sub></th>
                   <th>M<sub>15</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><?php echo number_format($M12, 3) ?></td>
+                  <td><?php echo number_format($M13, 3) ?></td>
+                  <td><?php echo number_format($M14, 3) ?></td>
+                  <td><?php echo number_format($M15, 3) ?></td>
+                </tr>
+              </tbody>
+              <thead class="thead-dark">
+                <tr>
                   <th>M<sub>21</sub></th>
                   <th>M<sub>23</sub></th>
                   <th>M<sub>24</sub></th>
                   <th>M<sub>25</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><?php echo number_format($M21, 3) ?></td>
+                  <td><?php echo number_format($M23, 3) ?></td>
+                  <td><?php echo number_format($M24, 3) ?></td>
+                  <td><?php echo number_format($M25, 3) ?></td>
+                </tr>
+              </tbody>
+              <thead class="thead-dark">
+                <tr>
                   <th>M<sub>31</sub></th>
                   <th>M<sub>32</sub></th>
                   <th>M<sub>34</sub></th>
                   <th>M<sub>35</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><?php echo number_format($M31, 3) ?></td>
+                  <td><?php echo number_format($M32, 3) ?></td>
+                  <td><?php echo number_format($M34, 3) ?></td>
+                  <td><?php echo number_format($M35, 3) ?></td>
+                </tr>
+              </tbody>
+              <thead class="thead-dark">
+                <tr>
                   <th>M<sub>41</sub></th>
                   <th>M<sub>42</sub></th>
                   <th>M<sub>43</sub></th>
                   <th>M<sub>45</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><?php echo number_format($M41, 3) ?></td>
+                  <td><?php echo number_format($M42, 3) ?></td>
+                  <td><?php echo number_format($M43, 3) ?></td>
+                  <td><?php echo number_format($M45, 3) ?></td>
+                </tr>
+              </tbody>
+              <thead class="thead-dark">
+                <tr>
                   <th>M<sub>51</sub></th>
                   <th>M<sub>52</sub></th>
                   <th>M<sub>53</sub></th>
@@ -943,225 +1193,7 @@
                 </tr>
               </thead>
               <tbody>
-                <?php
-                  $M12 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C1[1]-$data_medoid_init_WBP_C2[1], 2) + pow($data_medoid_init_LWBP_C1[1]-$data_medoid_init_LWBP_C2[1], 2)+
-                      pow($data_medoid_init_WBP_C1[2]-$data_medoid_init_WBP_C2[2], 2) + pow($data_medoid_init_LWBP_C1[2]-$data_medoid_init_LWBP_C2[2], 2)+
-                      pow($data_medoid_init_WBP_C1[3]-$data_medoid_init_WBP_C2[3], 2) + pow($data_medoid_init_LWBP_C1[3]-$data_medoid_init_LWBP_C2[3], 2)+
-                      pow($data_medoid_init_WBP_C1[4]-$data_medoid_init_WBP_C2[4], 2) + pow($data_medoid_init_LWBP_C1[4]-$data_medoid_init_LWBP_C2[4], 2)+
-                      pow($data_medoid_init_WBP_C1[5]-$data_medoid_init_WBP_C2[5], 2) + pow($data_medoid_init_LWBP_C1[5]-$data_medoid_init_LWBP_C2[5], 2)+
-                      pow($data_medoid_init_WBP_C1[6]-$data_medoid_init_WBP_C2[6], 2) + pow($data_medoid_init_LWBP_C1[6]-$data_medoid_init_LWBP_C2[6], 2)+
-                      pow($data_medoid_init_WBP_C1[7]-$data_medoid_init_WBP_C2[7], 2) + pow($data_medoid_init_LWBP_C1[7]-$data_medoid_init_LWBP_C2[7], 2)
-                    );
-                  $M13 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C1[1]-$data_medoid_init_WBP_C3[1], 2) + pow($data_medoid_init_LWBP_C1[1]-$data_medoid_init_LWBP_C3[1], 2)+
-                      pow($data_medoid_init_WBP_C1[2]-$data_medoid_init_WBP_C3[2], 2) + pow($data_medoid_init_LWBP_C1[2]-$data_medoid_init_LWBP_C3[2], 2)+
-                      pow($data_medoid_init_WBP_C1[3]-$data_medoid_init_WBP_C3[3], 2) + pow($data_medoid_init_LWBP_C1[3]-$data_medoid_init_LWBP_C3[3], 2)+
-                      pow($data_medoid_init_WBP_C1[4]-$data_medoid_init_WBP_C3[4], 2) + pow($data_medoid_init_LWBP_C1[4]-$data_medoid_init_LWBP_C3[4], 2)+
-                      pow($data_medoid_init_WBP_C1[5]-$data_medoid_init_WBP_C3[5], 2) + pow($data_medoid_init_LWBP_C1[5]-$data_medoid_init_LWBP_C3[5], 2)+
-                      pow($data_medoid_init_WBP_C1[6]-$data_medoid_init_WBP_C3[6], 2) + pow($data_medoid_init_LWBP_C1[6]-$data_medoid_init_LWBP_C3[6], 2)+
-                      pow($data_medoid_init_WBP_C1[7]-$data_medoid_init_WBP_C3[7], 2) + pow($data_medoid_init_LWBP_C1[7]-$data_medoid_init_LWBP_C3[7], 2)
-                    );
-                  $M14 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C1[1]-$data_medoid_init_WBP_C4[1], 2) + pow($data_medoid_init_LWBP_C1[1]-$data_medoid_init_LWBP_C4[1], 2)+
-                      pow($data_medoid_init_WBP_C1[2]-$data_medoid_init_WBP_C4[2], 2) + pow($data_medoid_init_LWBP_C1[2]-$data_medoid_init_LWBP_C4[2], 2)+
-                      pow($data_medoid_init_WBP_C1[3]-$data_medoid_init_WBP_C4[3], 2) + pow($data_medoid_init_LWBP_C1[3]-$data_medoid_init_LWBP_C4[3], 2)+
-                      pow($data_medoid_init_WBP_C1[4]-$data_medoid_init_WBP_C4[4], 2) + pow($data_medoid_init_LWBP_C1[4]-$data_medoid_init_LWBP_C4[4], 2)+
-                      pow($data_medoid_init_WBP_C1[5]-$data_medoid_init_WBP_C4[5], 2) + pow($data_medoid_init_LWBP_C1[5]-$data_medoid_init_LWBP_C4[5], 2)+
-                      pow($data_medoid_init_WBP_C1[6]-$data_medoid_init_WBP_C4[6], 2) + pow($data_medoid_init_LWBP_C1[6]-$data_medoid_init_LWBP_C4[6], 2)+
-                      pow($data_medoid_init_WBP_C1[7]-$data_medoid_init_WBP_C4[7], 2) + pow($data_medoid_init_LWBP_C1[7]-$data_medoid_init_LWBP_C4[7], 2)
-                    );
-                  $M15 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C1[1]-$data_medoid_init_WBP_C5[1], 2) + pow($data_medoid_init_LWBP_C1[1]-$data_medoid_init_LWBP_C5[1], 2)+
-                      pow($data_medoid_init_WBP_C1[2]-$data_medoid_init_WBP_C5[2], 2) + pow($data_medoid_init_LWBP_C1[2]-$data_medoid_init_LWBP_C5[2], 2)+
-                      pow($data_medoid_init_WBP_C1[3]-$data_medoid_init_WBP_C5[3], 2) + pow($data_medoid_init_LWBP_C1[3]-$data_medoid_init_LWBP_C5[3], 2)+
-                      pow($data_medoid_init_WBP_C1[4]-$data_medoid_init_WBP_C5[4], 2) + pow($data_medoid_init_LWBP_C1[4]-$data_medoid_init_LWBP_C5[4], 2)+
-                      pow($data_medoid_init_WBP_C1[5]-$data_medoid_init_WBP_C5[5], 2) + pow($data_medoid_init_LWBP_C1[5]-$data_medoid_init_LWBP_C5[5], 2)+
-                      pow($data_medoid_init_WBP_C1[6]-$data_medoid_init_WBP_C5[6], 2) + pow($data_medoid_init_LWBP_C1[6]-$data_medoid_init_LWBP_C5[6], 2)+
-                      pow($data_medoid_init_WBP_C1[7]-$data_medoid_init_WBP_C5[7], 2) + pow($data_medoid_init_LWBP_C1[7]-$data_medoid_init_LWBP_C5[7], 2)
-                    );
-                  $M21 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C2[1]-$data_medoid_init_WBP_C1[1], 2) + pow($data_medoid_init_LWBP_C2[1]-$data_medoid_init_LWBP_C1[1], 2)+
-                      pow($data_medoid_init_WBP_C2[2]-$data_medoid_init_WBP_C1[2], 2) + pow($data_medoid_init_LWBP_C2[2]-$data_medoid_init_LWBP_C1[2], 2)+
-                      pow($data_medoid_init_WBP_C2[3]-$data_medoid_init_WBP_C1[3], 2) + pow($data_medoid_init_LWBP_C2[3]-$data_medoid_init_LWBP_C1[3], 2)+
-                      pow($data_medoid_init_WBP_C2[4]-$data_medoid_init_WBP_C1[4], 2) + pow($data_medoid_init_LWBP_C2[4]-$data_medoid_init_LWBP_C1[4], 2)+
-                      pow($data_medoid_init_WBP_C2[5]-$data_medoid_init_WBP_C1[5], 2) + pow($data_medoid_init_LWBP_C2[5]-$data_medoid_init_LWBP_C1[5], 2)+
-                      pow($data_medoid_init_WBP_C2[6]-$data_medoid_init_WBP_C1[6], 2) + pow($data_medoid_init_LWBP_C2[6]-$data_medoid_init_LWBP_C1[6], 2)+
-                      pow($data_medoid_init_WBP_C2[7]-$data_medoid_init_WBP_C1[7], 2) + pow($data_medoid_init_LWBP_C2[7]-$data_medoid_init_LWBP_C1[7], 2)
-                    );
-                  $M23 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C2[1]-$data_medoid_init_WBP_C3[1], 2) + pow($data_medoid_init_LWBP_C2[1]-$data_medoid_init_LWBP_C3[1], 2)+
-                      pow($data_medoid_init_WBP_C2[2]-$data_medoid_init_WBP_C3[2], 2) + pow($data_medoid_init_LWBP_C2[2]-$data_medoid_init_LWBP_C3[2], 2)+
-                      pow($data_medoid_init_WBP_C2[3]-$data_medoid_init_WBP_C3[3], 2) + pow($data_medoid_init_LWBP_C2[3]-$data_medoid_init_LWBP_C3[3], 2)+
-                      pow($data_medoid_init_WBP_C2[4]-$data_medoid_init_WBP_C3[4], 2) + pow($data_medoid_init_LWBP_C2[4]-$data_medoid_init_LWBP_C3[4], 2)+
-                      pow($data_medoid_init_WBP_C2[5]-$data_medoid_init_WBP_C3[5], 2) + pow($data_medoid_init_LWBP_C2[5]-$data_medoid_init_LWBP_C3[5], 2)+
-                      pow($data_medoid_init_WBP_C2[6]-$data_medoid_init_WBP_C3[6], 2) + pow($data_medoid_init_LWBP_C2[6]-$data_medoid_init_LWBP_C3[6], 2)+
-                      pow($data_medoid_init_WBP_C2[7]-$data_medoid_init_WBP_C3[7], 2) + pow($data_medoid_init_LWBP_C2[7]-$data_medoid_init_LWBP_C3[7], 2)
-                    );
-                  $M24 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C2[1]-$data_medoid_init_WBP_C4[1], 2) + pow($data_medoid_init_LWBP_C2[1]-$data_medoid_init_LWBP_C4[1], 2)+
-                      pow($data_medoid_init_WBP_C2[2]-$data_medoid_init_WBP_C4[2], 2) + pow($data_medoid_init_LWBP_C2[2]-$data_medoid_init_LWBP_C4[2], 2)+
-                      pow($data_medoid_init_WBP_C2[3]-$data_medoid_init_WBP_C4[3], 2) + pow($data_medoid_init_LWBP_C2[3]-$data_medoid_init_LWBP_C4[3], 2)+
-                      pow($data_medoid_init_WBP_C2[4]-$data_medoid_init_WBP_C4[4], 2) + pow($data_medoid_init_LWBP_C2[4]-$data_medoid_init_LWBP_C4[4], 2)+
-                      pow($data_medoid_init_WBP_C2[5]-$data_medoid_init_WBP_C4[5], 2) + pow($data_medoid_init_LWBP_C2[5]-$data_medoid_init_LWBP_C4[5], 2)+
-                      pow($data_medoid_init_WBP_C2[6]-$data_medoid_init_WBP_C4[6], 2) + pow($data_medoid_init_LWBP_C2[6]-$data_medoid_init_LWBP_C4[6], 2)+
-                      pow($data_medoid_init_WBP_C2[7]-$data_medoid_init_WBP_C4[7], 2) + pow($data_medoid_init_LWBP_C2[7]-$data_medoid_init_LWBP_C4[7], 2)
-                    );
-                  $M25 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C2[1]-$data_medoid_init_WBP_C5[1], 2) + pow($data_medoid_init_LWBP_C2[1]-$data_medoid_init_LWBP_C5[1], 2)+
-                      pow($data_medoid_init_WBP_C2[2]-$data_medoid_init_WBP_C5[2], 2) + pow($data_medoid_init_LWBP_C2[2]-$data_medoid_init_LWBP_C5[2], 2)+
-                      pow($data_medoid_init_WBP_C2[3]-$data_medoid_init_WBP_C5[3], 2) + pow($data_medoid_init_LWBP_C2[3]-$data_medoid_init_LWBP_C5[3], 2)+
-                      pow($data_medoid_init_WBP_C2[4]-$data_medoid_init_WBP_C5[4], 2) + pow($data_medoid_init_LWBP_C2[4]-$data_medoid_init_LWBP_C5[4], 2)+
-                      pow($data_medoid_init_WBP_C2[5]-$data_medoid_init_WBP_C5[5], 2) + pow($data_medoid_init_LWBP_C2[5]-$data_medoid_init_LWBP_C5[5], 2)+
-                      pow($data_medoid_init_WBP_C2[6]-$data_medoid_init_WBP_C5[6], 2) + pow($data_medoid_init_LWBP_C2[6]-$data_medoid_init_LWBP_C5[6], 2)+
-                      pow($data_medoid_init_WBP_C2[7]-$data_medoid_init_WBP_C5[7], 2) + pow($data_medoid_init_LWBP_C2[7]-$data_medoid_init_LWBP_C5[7], 2)
-                    );
-                  $M31 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C3[1]-$data_medoid_init_WBP_C1[1], 2) + pow($data_medoid_init_LWBP_C3[1]-$data_medoid_init_LWBP_C1[1], 2)+
-                      pow($data_medoid_init_WBP_C3[2]-$data_medoid_init_WBP_C1[2], 2) + pow($data_medoid_init_LWBP_C3[2]-$data_medoid_init_LWBP_C1[2], 2)+
-                      pow($data_medoid_init_WBP_C3[3]-$data_medoid_init_WBP_C1[3], 2) + pow($data_medoid_init_LWBP_C3[3]-$data_medoid_init_LWBP_C1[3], 2)+
-                      pow($data_medoid_init_WBP_C3[4]-$data_medoid_init_WBP_C1[4], 2) + pow($data_medoid_init_LWBP_C3[4]-$data_medoid_init_LWBP_C1[4], 2)+
-                      pow($data_medoid_init_WBP_C3[5]-$data_medoid_init_WBP_C1[5], 2) + pow($data_medoid_init_LWBP_C3[5]-$data_medoid_init_LWBP_C1[5], 2)+
-                      pow($data_medoid_init_WBP_C3[6]-$data_medoid_init_WBP_C1[6], 2) + pow($data_medoid_init_LWBP_C3[6]-$data_medoid_init_LWBP_C1[6], 2)+
-                      pow($data_medoid_init_WBP_C3[7]-$data_medoid_init_WBP_C1[7], 2) + pow($data_medoid_init_LWBP_C3[7]-$data_medoid_init_LWBP_C1[7], 2)
-                    );
-                  $M32 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C3[1]-$data_medoid_init_WBP_C2[1], 2) + pow($data_medoid_init_LWBP_C3[1]-$data_medoid_init_LWBP_C2[1], 2)+
-                      pow($data_medoid_init_WBP_C3[2]-$data_medoid_init_WBP_C2[2], 2) + pow($data_medoid_init_LWBP_C3[2]-$data_medoid_init_LWBP_C2[2], 2)+
-                      pow($data_medoid_init_WBP_C3[3]-$data_medoid_init_WBP_C2[3], 2) + pow($data_medoid_init_LWBP_C3[3]-$data_medoid_init_LWBP_C2[3], 2)+
-                      pow($data_medoid_init_WBP_C3[4]-$data_medoid_init_WBP_C2[4], 2) + pow($data_medoid_init_LWBP_C3[4]-$data_medoid_init_LWBP_C2[4], 2)+
-                      pow($data_medoid_init_WBP_C3[5]-$data_medoid_init_WBP_C2[5], 2) + pow($data_medoid_init_LWBP_C3[5]-$data_medoid_init_LWBP_C2[5], 2)+
-                      pow($data_medoid_init_WBP_C3[6]-$data_medoid_init_WBP_C2[6], 2) + pow($data_medoid_init_LWBP_C3[6]-$data_medoid_init_LWBP_C2[6], 2)+
-                      pow($data_medoid_init_WBP_C3[7]-$data_medoid_init_WBP_C2[7], 2) + pow($data_medoid_init_LWBP_C3[7]-$data_medoid_init_LWBP_C2[7], 2)
-                    );
-                  $M34 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C3[1]-$data_medoid_init_WBP_C4[1], 2) + pow($data_medoid_init_LWBP_C3[1]-$data_medoid_init_LWBP_C4[1], 2)+
-                      pow($data_medoid_init_WBP_C3[2]-$data_medoid_init_WBP_C4[2], 2) + pow($data_medoid_init_LWBP_C3[2]-$data_medoid_init_LWBP_C4[2], 2)+
-                      pow($data_medoid_init_WBP_C3[3]-$data_medoid_init_WBP_C4[3], 2) + pow($data_medoid_init_LWBP_C3[3]-$data_medoid_init_LWBP_C4[3], 2)+
-                      pow($data_medoid_init_WBP_C3[4]-$data_medoid_init_WBP_C4[4], 2) + pow($data_medoid_init_LWBP_C3[4]-$data_medoid_init_LWBP_C4[4], 2)+
-                      pow($data_medoid_init_WBP_C3[5]-$data_medoid_init_WBP_C4[5], 2) + pow($data_medoid_init_LWBP_C3[5]-$data_medoid_init_LWBP_C4[5], 2)+
-                      pow($data_medoid_init_WBP_C3[6]-$data_medoid_init_WBP_C4[6], 2) + pow($data_medoid_init_LWBP_C3[6]-$data_medoid_init_LWBP_C4[6], 2)+
-                      pow($data_medoid_init_WBP_C3[7]-$data_medoid_init_WBP_C4[7], 2) + pow($data_medoid_init_LWBP_C3[7]-$data_medoid_init_LWBP_C4[7], 2)
-                    );
-                  $M35 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C3[1]-$data_medoid_init_WBP_C5[1], 2) + pow($data_medoid_init_LWBP_C3[1]-$data_medoid_init_LWBP_C5[1], 2)+
-                      pow($data_medoid_init_WBP_C3[2]-$data_medoid_init_WBP_C5[2], 2) + pow($data_medoid_init_LWBP_C3[2]-$data_medoid_init_LWBP_C5[2], 2)+
-                      pow($data_medoid_init_WBP_C3[3]-$data_medoid_init_WBP_C5[3], 2) + pow($data_medoid_init_LWBP_C3[3]-$data_medoid_init_LWBP_C5[3], 2)+
-                      pow($data_medoid_init_WBP_C3[4]-$data_medoid_init_WBP_C5[4], 2) + pow($data_medoid_init_LWBP_C3[4]-$data_medoid_init_LWBP_C5[4], 2)+
-                      pow($data_medoid_init_WBP_C3[5]-$data_medoid_init_WBP_C5[5], 2) + pow($data_medoid_init_LWBP_C3[5]-$data_medoid_init_LWBP_C5[5], 2)+
-                      pow($data_medoid_init_WBP_C3[6]-$data_medoid_init_WBP_C5[6], 2) + pow($data_medoid_init_LWBP_C3[6]-$data_medoid_init_LWBP_C5[6], 2)+
-                      pow($data_medoid_init_WBP_C3[7]-$data_medoid_init_WBP_C5[7], 2) + pow($data_medoid_init_LWBP_C3[7]-$data_medoid_init_LWBP_C5[7], 2)
-                    );
-                  $M41 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C4[1]-$data_medoid_init_WBP_C1[1], 2) + pow($data_medoid_init_LWBP_C4[1]-$data_medoid_init_LWBP_C1[1], 2)+
-                      pow($data_medoid_init_WBP_C4[2]-$data_medoid_init_WBP_C1[2], 2) + pow($data_medoid_init_LWBP_C4[2]-$data_medoid_init_LWBP_C1[2], 2)+
-                      pow($data_medoid_init_WBP_C4[3]-$data_medoid_init_WBP_C1[3], 2) + pow($data_medoid_init_LWBP_C4[3]-$data_medoid_init_LWBP_C1[3], 2)+
-                      pow($data_medoid_init_WBP_C4[4]-$data_medoid_init_WBP_C1[4], 2) + pow($data_medoid_init_LWBP_C4[4]-$data_medoid_init_LWBP_C1[4], 2)+
-                      pow($data_medoid_init_WBP_C4[5]-$data_medoid_init_WBP_C1[5], 2) + pow($data_medoid_init_LWBP_C4[5]-$data_medoid_init_LWBP_C1[5], 2)+
-                      pow($data_medoid_init_WBP_C4[6]-$data_medoid_init_WBP_C1[6], 2) + pow($data_medoid_init_LWBP_C4[6]-$data_medoid_init_LWBP_C1[6], 2)+
-                      pow($data_medoid_init_WBP_C4[7]-$data_medoid_init_WBP_C1[7], 2) + pow($data_medoid_init_LWBP_C4[7]-$data_medoid_init_LWBP_C1[7], 2)
-                    );
-                  $M42 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C4[1]-$data_medoid_init_WBP_C2[1], 2) + pow($data_medoid_init_LWBP_C4[1]-$data_medoid_init_LWBP_C2[1], 2)+
-                      pow($data_medoid_init_WBP_C4[2]-$data_medoid_init_WBP_C2[2], 2) + pow($data_medoid_init_LWBP_C4[2]-$data_medoid_init_LWBP_C2[2], 2)+
-                      pow($data_medoid_init_WBP_C4[3]-$data_medoid_init_WBP_C2[3], 2) + pow($data_medoid_init_LWBP_C4[3]-$data_medoid_init_LWBP_C2[3], 2)+
-                      pow($data_medoid_init_WBP_C4[4]-$data_medoid_init_WBP_C2[4], 2) + pow($data_medoid_init_LWBP_C4[4]-$data_medoid_init_LWBP_C2[4], 2)+
-                      pow($data_medoid_init_WBP_C4[5]-$data_medoid_init_WBP_C2[5], 2) + pow($data_medoid_init_LWBP_C4[5]-$data_medoid_init_LWBP_C2[5], 2)+
-                      pow($data_medoid_init_WBP_C4[6]-$data_medoid_init_WBP_C2[6], 2) + pow($data_medoid_init_LWBP_C4[6]-$data_medoid_init_LWBP_C2[6], 2)+
-                      pow($data_medoid_init_WBP_C4[7]-$data_medoid_init_WBP_C2[7], 2) + pow($data_medoid_init_LWBP_C4[7]-$data_medoid_init_LWBP_C2[7], 2)
-                    );
-                  $M43 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C4[1]-$data_medoid_init_WBP_C3[1], 2) + pow($data_medoid_init_LWBP_C4[1]-$data_medoid_init_LWBP_C3[1], 2)+
-                      pow($data_medoid_init_WBP_C4[2]-$data_medoid_init_WBP_C3[2], 2) + pow($data_medoid_init_LWBP_C4[2]-$data_medoid_init_LWBP_C3[2], 2)+
-                      pow($data_medoid_init_WBP_C4[3]-$data_medoid_init_WBP_C3[3], 2) + pow($data_medoid_init_LWBP_C4[3]-$data_medoid_init_LWBP_C3[3], 2)+
-                      pow($data_medoid_init_WBP_C4[4]-$data_medoid_init_WBP_C3[4], 2) + pow($data_medoid_init_LWBP_C4[4]-$data_medoid_init_LWBP_C3[4], 2)+
-                      pow($data_medoid_init_WBP_C4[5]-$data_medoid_init_WBP_C3[5], 2) + pow($data_medoid_init_LWBP_C4[5]-$data_medoid_init_LWBP_C3[5], 2)+
-                      pow($data_medoid_init_WBP_C4[6]-$data_medoid_init_WBP_C3[6], 2) + pow($data_medoid_init_LWBP_C4[6]-$data_medoid_init_LWBP_C3[6], 2)+
-                      pow($data_medoid_init_WBP_C4[7]-$data_medoid_init_WBP_C3[7], 2) + pow($data_medoid_init_LWBP_C4[7]-$data_medoid_init_LWBP_C3[7], 2)
-                    );
-                  $M45 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C4[1]-$data_medoid_init_WBP_C5[1], 2) + pow($data_medoid_init_LWBP_C4[1]-$data_medoid_init_LWBP_C5[1], 2)+
-                      pow($data_medoid_init_WBP_C4[2]-$data_medoid_init_WBP_C5[2], 2) + pow($data_medoid_init_LWBP_C4[2]-$data_medoid_init_LWBP_C5[2], 2)+
-                      pow($data_medoid_init_WBP_C4[3]-$data_medoid_init_WBP_C5[3], 2) + pow($data_medoid_init_LWBP_C4[3]-$data_medoid_init_LWBP_C5[3], 2)+
-                      pow($data_medoid_init_WBP_C4[4]-$data_medoid_init_WBP_C5[4], 2) + pow($data_medoid_init_LWBP_C4[4]-$data_medoid_init_LWBP_C5[4], 2)+
-                      pow($data_medoid_init_WBP_C4[5]-$data_medoid_init_WBP_C5[5], 2) + pow($data_medoid_init_LWBP_C4[5]-$data_medoid_init_LWBP_C5[5], 2)+
-                      pow($data_medoid_init_WBP_C4[6]-$data_medoid_init_WBP_C5[6], 2) + pow($data_medoid_init_LWBP_C4[6]-$data_medoid_init_LWBP_C5[6], 2)+
-                      pow($data_medoid_init_WBP_C4[7]-$data_medoid_init_WBP_C5[7], 2) + pow($data_medoid_init_LWBP_C4[7]-$data_medoid_init_LWBP_C5[7], 2)
-                    );
-                  $M51 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C5[1]-$data_medoid_init_WBP_C1[1], 2) + pow($data_medoid_init_LWBP_C5[1]-$data_medoid_init_LWBP_C1[1], 2)+
-                      pow($data_medoid_init_WBP_C5[2]-$data_medoid_init_WBP_C1[2], 2) + pow($data_medoid_init_LWBP_C5[2]-$data_medoid_init_LWBP_C1[2], 2)+
-                      pow($data_medoid_init_WBP_C5[3]-$data_medoid_init_WBP_C1[3], 2) + pow($data_medoid_init_LWBP_C5[3]-$data_medoid_init_LWBP_C1[3], 2)+
-                      pow($data_medoid_init_WBP_C5[4]-$data_medoid_init_WBP_C1[4], 2) + pow($data_medoid_init_LWBP_C5[4]-$data_medoid_init_LWBP_C1[4], 2)+
-                      pow($data_medoid_init_WBP_C5[5]-$data_medoid_init_WBP_C1[5], 2) + pow($data_medoid_init_LWBP_C5[5]-$data_medoid_init_LWBP_C1[5], 2)+
-                      pow($data_medoid_init_WBP_C5[6]-$data_medoid_init_WBP_C1[6], 2) + pow($data_medoid_init_LWBP_C5[6]-$data_medoid_init_LWBP_C1[6], 2)+
-                      pow($data_medoid_init_WBP_C5[7]-$data_medoid_init_WBP_C1[7], 2) + pow($data_medoid_init_LWBP_C5[7]-$data_medoid_init_LWBP_C1[7], 2)
-                    );
-                  $M52 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C5[1]-$data_medoid_init_WBP_C2[1], 2) + pow($data_medoid_init_LWBP_C5[1]-$data_medoid_init_LWBP_C2[1], 2)+
-                      pow($data_medoid_init_WBP_C5[2]-$data_medoid_init_WBP_C2[2], 2) + pow($data_medoid_init_LWBP_C5[2]-$data_medoid_init_LWBP_C2[2], 2)+
-                      pow($data_medoid_init_WBP_C5[3]-$data_medoid_init_WBP_C2[3], 2) + pow($data_medoid_init_LWBP_C5[3]-$data_medoid_init_LWBP_C2[3], 2)+
-                      pow($data_medoid_init_WBP_C5[4]-$data_medoid_init_WBP_C2[4], 2) + pow($data_medoid_init_LWBP_C5[4]-$data_medoid_init_LWBP_C2[4], 2)+
-                      pow($data_medoid_init_WBP_C5[5]-$data_medoid_init_WBP_C2[5], 2) + pow($data_medoid_init_LWBP_C5[5]-$data_medoid_init_LWBP_C2[5], 2)+
-                      pow($data_medoid_init_WBP_C5[6]-$data_medoid_init_WBP_C2[6], 2) + pow($data_medoid_init_LWBP_C5[6]-$data_medoid_init_LWBP_C2[6], 2)+
-                      pow($data_medoid_init_WBP_C5[7]-$data_medoid_init_WBP_C2[7], 2) + pow($data_medoid_init_LWBP_C5[7]-$data_medoid_init_LWBP_C2[7], 2)
-                    );
-                  $M53 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C5[1]-$data_medoid_init_WBP_C3[1], 2) + pow($data_medoid_init_LWBP_C5[1]-$data_medoid_init_LWBP_C3[1], 2)+
-                      pow($data_medoid_init_WBP_C5[2]-$data_medoid_init_WBP_C3[2], 2) + pow($data_medoid_init_LWBP_C5[2]-$data_medoid_init_LWBP_C3[2], 2)+
-                      pow($data_medoid_init_WBP_C5[3]-$data_medoid_init_WBP_C3[3], 2) + pow($data_medoid_init_LWBP_C5[3]-$data_medoid_init_LWBP_C3[3], 2)+
-                      pow($data_medoid_init_WBP_C5[4]-$data_medoid_init_WBP_C3[4], 2) + pow($data_medoid_init_LWBP_C5[4]-$data_medoid_init_LWBP_C3[4], 2)+
-                      pow($data_medoid_init_WBP_C5[5]-$data_medoid_init_WBP_C3[5], 2) + pow($data_medoid_init_LWBP_C5[5]-$data_medoid_init_LWBP_C3[5], 2)+
-                      pow($data_medoid_init_WBP_C5[6]-$data_medoid_init_WBP_C3[6], 2) + pow($data_medoid_init_LWBP_C5[6]-$data_medoid_init_LWBP_C3[6], 2)+
-                      pow($data_medoid_init_WBP_C5[7]-$data_medoid_init_WBP_C3[7], 2) + pow($data_medoid_init_LWBP_C5[7]-$data_medoid_init_LWBP_C3[7], 2)
-                    );
-                  $M54 =
-                    sqrt(
-                      pow($data_medoid_init_WBP_C5[1]-$data_medoid_init_WBP_C4[1], 2) + pow($data_medoid_init_LWBP_C5[1]-$data_medoid_init_LWBP_C4[1], 2)+
-                      pow($data_medoid_init_WBP_C5[2]-$data_medoid_init_WBP_C4[2], 2) + pow($data_medoid_init_LWBP_C5[2]-$data_medoid_init_LWBP_C4[2], 2)+
-                      pow($data_medoid_init_WBP_C5[3]-$data_medoid_init_WBP_C4[3], 2) + pow($data_medoid_init_LWBP_C5[3]-$data_medoid_init_LWBP_C4[3], 2)+
-                      pow($data_medoid_init_WBP_C5[4]-$data_medoid_init_WBP_C4[4], 2) + pow($data_medoid_init_LWBP_C5[4]-$data_medoid_init_LWBP_C4[4], 2)+
-                      pow($data_medoid_init_WBP_C5[5]-$data_medoid_init_WBP_C4[5], 2) + pow($data_medoid_init_LWBP_C5[5]-$data_medoid_init_LWBP_C4[5], 2)+
-                      pow($data_medoid_init_WBP_C5[6]-$data_medoid_init_WBP_C4[6], 2) + pow($data_medoid_init_LWBP_C5[6]-$data_medoid_init_LWBP_C4[6], 2)+
-                      pow($data_medoid_init_WBP_C5[7]-$data_medoid_init_WBP_C4[7], 2) + pow($data_medoid_init_LWBP_C5[7]-$data_medoid_init_LWBP_C4[7], 2)
-                    );
-                ?>
                 <tr>
-                  <td><?php echo number_format($M12, 3) ?></td>
-                  <td><?php echo number_format($M13, 3) ?></td>
-                  <td><?php echo number_format($M14, 3) ?></td>
-                  <td><?php echo number_format($M15, 3) ?></td>
-                  <td><?php echo number_format($M21, 3) ?></td>
-                  <td><?php echo number_format($M23, 3) ?></td>
-                  <td><?php echo number_format($M24, 3) ?></td>
-                  <td><?php echo number_format($M25, 3) ?></td>
-                  <td><?php echo number_format($M31, 3) ?></td>
-                  <td><?php echo number_format($M32, 3) ?></td>
-                  <td><?php echo number_format($M34, 3) ?></td>
-                  <td><?php echo number_format($M35, 3) ?></td>
-                  <td><?php echo number_format($M41, 3) ?></td>
-                  <td><?php echo number_format($M42, 3) ?></td>
-                  <td><?php echo number_format($M43, 3) ?></td>
-                  <td><?php echo number_format($M45, 3) ?></td>
                   <td><?php echo number_format($M51, 3) ?></td>
                   <td><?php echo number_format($M52, 3) ?></td>
                   <td><?php echo number_format($M53, 3) ?></td>
@@ -1171,27 +1203,82 @@
             </table>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="table-responsive">
             <table class="table table-sm">
+              <?php
+                $R12 = ($S1 + $S2) / $M12; $R13 = ($S1 + $S3) / $M13; $R14 = ($S1 + $S4) / $M14; $R15 = ($S1 + $S5) / $M15;
+                $R21 = ($S2 + $S1) / $M21; $R23 = ($S2 + $S3) / $M23; $R24 = ($S2 + $S4) / $M24; $R25 = ($S2 + $S5) / $M25;
+                $R31 = ($S3 + $S1) / $M31; $R32 = ($S3 + $S2) / $M32; $R34 = ($S3 + $S4) / $M34; $R35 = ($S3 + $S5) / $M35;
+                $R41 = ($S4 + $S1) / $M41; $R42 = ($S4 + $S2) / $M42; $R43 = ($S4 + $S3) / $M43; $R45 = ($S4 + $S5) / $M45;
+                $R51 = ($S5 + $S1) / $M51; $R52 = ($S5 + $S2) / $M52; $R53 = ($S5 + $S3) / $M53; $R54 = ($S5 + $S4) / $M54;
+              ?>
               <thead class="thead-dark">
                 <tr>
                   <th>R<sub>12</sub></th>
                   <th>R<sub>13</sub></th>
                   <th>R<sub>14</sub></th>
                   <th>R<sub>15</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><?php echo number_format($R12, 3) ?></td>
+                  <td><?php echo number_format($R13, 3) ?></td>
+                  <td><?php echo number_format($R14, 3) ?></td>
+                  <td><?php echo number_format($R15, 3) ?></td>
+                </tr>
+              </tbody>
+              <thead class="thead-dark">
+                <tr>
                   <th>R<sub>21</sub></th>
                   <th>R<sub>23</sub></th>
                   <th>R<sub>24</sub></th>
                   <th>R<sub>25</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><?php echo number_format($R21, 3) ?></td>
+                  <td><?php echo number_format($R23, 3) ?></td>
+                  <td><?php echo number_format($R24, 3) ?></td>
+                  <td><?php echo number_format($R25, 3) ?></td>
+                </tr>
+              </tbody>
+              <thead class="thead-dark">
+                <tr>
                   <th>R<sub>31</sub></th>
                   <th>R<sub>32</sub></th>
                   <th>R<sub>34</sub></th>
                   <th>R<sub>35</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><?php echo number_format($R31, 3) ?></td>
+                  <td><?php echo number_format($R32, 3) ?></td>
+                  <td><?php echo number_format($R34, 3) ?></td>
+                  <td><?php echo number_format($R35, 3) ?></td>
+                </tr>
+              </tbody>
+              <thead class="thead-dark">
+                <tr>
                   <th>R<sub>41</sub></th>
                   <th>R<sub>42</sub></th>
                   <th>R<sub>43</sub></th>
                   <th>R<sub>45</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><?php echo number_format($R41, 3) ?></td>
+                  <td><?php echo number_format($R42, 3) ?></td>
+                  <td><?php echo number_format($R43, 3) ?></td>
+                  <td><?php echo number_format($R45, 3) ?></td>
+                </tr>
+              </tbody>
+              <thead class="thead-dark">
+                <tr>
                   <th>R<sub>51</sub></th>
                   <th>R<sub>52</sub></th>
                   <th>R<sub>53</sub></th>
@@ -1199,30 +1286,7 @@
                 </tr>
               </thead>
               <tbody>
-                <?php
-                  $R12 = ($S1 + $S2) / $M12; $R13 = ($S1 + $S3) / $M13; $R14 = ($S1 + $S4) / $M14; $R15 = ($S1 + $S5) / $M15;
-                  $R21 = ($S2 + $S1) / $M21; $R23 = ($S2 + $S3) / $M23; $R24 = ($S2 + $S4) / $M24; $R25 = ($S2 + $S5) / $M25;
-                  $R31 = ($S3 + $S1) / $M31; $R32 = ($S3 + $S2) / $M32; $R34 = ($S3 + $S4) / $M34; $R35 = ($S3 + $S5) / $M35;
-                  $R41 = ($S4 + $S1) / $M41; $R42 = ($S4 + $S2) / $M42; $R43 = ($S4 + $S3) / $M43; $R45 = ($S4 + $S5) / $M45;
-                  $R51 = ($S5 + $S1) / $M51; $R52 = ($S5 + $S2) / $M52; $R53 = ($S5 + $S3) / $M53; $R54 = ($S5 + $S4) / $M54;
-                ?>
                 <tr>
-                  <td><?php echo number_format($R12, 3) ?></td>
-                  <td><?php echo number_format($R13, 3) ?></td>
-                  <td><?php echo number_format($R14, 3) ?></td>
-                  <td><?php echo number_format($R15, 3) ?></td>
-                  <td><?php echo number_format($R21, 3) ?></td>
-                  <td><?php echo number_format($R23, 3) ?></td>
-                  <td><?php echo number_format($R24, 3) ?></td>
-                  <td><?php echo number_format($R25, 3) ?></td>
-                  <td><?php echo number_format($R31, 3) ?></td>
-                  <td><?php echo number_format($R32, 3) ?></td>
-                  <td><?php echo number_format($R34, 3) ?></td>
-                  <td><?php echo number_format($R35, 3) ?></td>
-                  <td><?php echo number_format($R41, 3) ?></td>
-                  <td><?php echo number_format($R42, 3) ?></td>
-                  <td><?php echo number_format($R43, 3) ?></td>
-                  <td><?php echo number_format($R45, 3) ?></td>
                   <td><?php echo number_format($R51, 3) ?></td>
                   <td><?php echo number_format($R52, 3) ?></td>
                   <td><?php echo number_format($R53, 3) ?></td>
@@ -1232,7 +1296,7 @@
             </table>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <div class="table-responsive">
             <table class="table table-sm">
               <thead class="thead-dark">
@@ -1265,7 +1329,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-1">
           <div class="table-responsive">
             <table class="table table-sm">
               <thead class="thead-dark">
