@@ -1,4 +1,4 @@
-<?php include '../../conn.php'; ?>
+<?php include '../../conn.php'; session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -650,6 +650,7 @@
               <tbody>
                 <?php
                   $DB = ($D1 + $D2) / 2;
+                  $_SESSION['DB_C2'] = $DB;
                 ?>
                 <tr>
                   <td><?php echo number_format($DB, 3) ?></td>
