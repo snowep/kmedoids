@@ -23,8 +23,10 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="cluster/manhattan_distance/2_cluster.php">2 Cluster</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="cluster/manhattan_distance/3_cluster.php">3 Cluster</a>
+          <a class="dropdown-item" href="cluster/manhattan_distance/4_cluster.php">4 Cluster</a>
+          <a class="dropdown-item" href="cluster/manhattan_distance/5_cluster.php">5 Cluster</a>
+          <a class="dropdown-item" href="cluster/manhattan_distance/6_cluster.php">6 Cluster</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -38,6 +40,9 @@
           <a class="dropdown-item" href="cluster/euclidean_distance/5_cluster.php">5 Cluster</a>
           <a class="dropdown-item" href="cluster/euclidean_distance/6_cluster.php">6 Cluster</a>
         </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="optimum_cluster.php">Cluster Optimum</a>
       </li>
     </ul>
   </div>

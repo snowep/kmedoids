@@ -6,15 +6,15 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Data
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="data_training.php">Data Training</a>
-          <a class="dropdown-item" href="data_testing.php">Data Testing</a>
+          <a class="dropdown-item" href="../data/data_training.php">Data Training</a>
+          <a class="dropdown-item" href="../data/data_testing.php"">Data Testing</a>
         </div>
       </li>
       <li class="nav-item dropdown">

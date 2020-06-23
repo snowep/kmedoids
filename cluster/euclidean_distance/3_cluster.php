@@ -828,6 +828,30 @@
                 <?php
                   $DB = ($D1 + $D2 + $D3) / 3;
                   $_SESSION['DB_C3'] = $DB;
+                  $query = $db->query("UPDATE tb_centroid SET
+                          Daya_WBP_1=$data_medoid_init_WBP_C1[1], Daya_LWBP_1=$data_medoid_init_LWBP_C1[1],
+                          Daya_WBP_2=$data_medoid_init_WBP_C1[2], Daya_LWBP_2=$data_medoid_init_LWBP_C1[2],
+                          Daya_WBP_3=$data_medoid_init_WBP_C1[3], Daya_LWBP_3=$data_medoid_init_LWBP_C1[3],
+                          Daya_WBP_4=$data_medoid_init_WBP_C1[4], Daya_LWBP_4=$data_medoid_init_LWBP_C1[4],
+                          Daya_WBP_5=$data_medoid_init_WBP_C1[5], Daya_LWBP_5=$data_medoid_init_LWBP_C1[5],
+                          Daya_WBP_6=$data_medoid_init_WBP_C1[6], Daya_LWBP_6=$data_medoid_init_LWBP_C1[6],
+                          Daya_WBP_7=$data_medoid_init_WBP_C1[7], Daya_LWBP_7=$data_medoid_init_LWBP_C1[7], username='' WHERE cluster='3' AND C='C1'");
+                  $query = $db->query("UPDATE tb_centroid SET
+                          Daya_WBP_1=$data_medoid_init_WBP_C2[1], Daya_LWBP_1=$data_medoid_init_LWBP_C2[1],
+                          Daya_WBP_2=$data_medoid_init_WBP_C2[2], Daya_LWBP_2=$data_medoid_init_LWBP_C2[2],
+                          Daya_WBP_3=$data_medoid_init_WBP_C2[3], Daya_LWBP_3=$data_medoid_init_LWBP_C2[3],
+                          Daya_WBP_4=$data_medoid_init_WBP_C2[4], Daya_LWBP_4=$data_medoid_init_LWBP_C2[4],
+                          Daya_WBP_5=$data_medoid_init_WBP_C2[5], Daya_LWBP_5=$data_medoid_init_LWBP_C2[5],
+                          Daya_WBP_6=$data_medoid_init_WBP_C2[6], Daya_LWBP_6=$data_medoid_init_LWBP_C2[6],
+                          Daya_WBP_7=$data_medoid_init_WBP_C2[7], Daya_LWBP_7=$data_medoid_init_LWBP_C2[7], username='' WHERE cluster='3' AND C='C2'");
+                  $query = $db->query("UPDATE tb_centroid SET
+                          Daya_WBP_1=$data_medoid_init_WBP_C3[1], Daya_LWBP_1=$data_medoid_init_LWBP_C3[1],
+                          Daya_WBP_2=$data_medoid_init_WBP_C3[2], Daya_LWBP_2=$data_medoid_init_LWBP_C3[2],
+                          Daya_WBP_3=$data_medoid_init_WBP_C3[3], Daya_LWBP_3=$data_medoid_init_LWBP_C3[3],
+                          Daya_WBP_4=$data_medoid_init_WBP_C3[4], Daya_LWBP_4=$data_medoid_init_LWBP_C3[4],
+                          Daya_WBP_5=$data_medoid_init_WBP_C3[5], Daya_LWBP_5=$data_medoid_init_LWBP_C3[5],
+                          Daya_WBP_6=$data_medoid_init_WBP_C3[6], Daya_LWBP_6=$data_medoid_init_LWBP_C3[6],
+                          Daya_WBP_7=$data_medoid_init_WBP_C3[7], Daya_LWBP_7=$data_medoid_init_LWBP_C3[7], username='' WHERE cluster='3' AND C='C3'");
                 ?>
                 <tr>
                   <td><?php echo number_format($DB, 3) ?></td>
