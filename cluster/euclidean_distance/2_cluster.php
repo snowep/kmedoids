@@ -41,10 +41,12 @@
                 $query_update_init = $db->query("UPDATE tb_training SET C2DC1='0', C2DC2='0', C_before='', C_after='', hasil='0'");
                 $S = 0;
 
-                do {
-                  $K_C1 = rand(1,103);
-                  $K_C2 = rand(1,103);
-                } while ($K_C1 == $K_C2);
+                // do {
+                //   $K_C1 = rand(1,103);
+                //   $K_C2 = rand(1,103);
+                // } while ($K_C1 == $K_C2);
+                $K_C1 = 1;
+                $K_C2 = 2;
               ?>
               <tbody>
                 <tr>
@@ -201,7 +203,6 @@
                         pow($fetch_data[13]-$data_medoid_init_WBP_C2[7], 2) + pow($fetch_data[14]-$data_medoid_init_LWBP_C2[7], 2)
                       );
                       //$C2DC1 dan $C2DC2 variable masuk ke database
-
                       if ($C2DC1 < $C2DC2) {
                         $C = 'C1';
                       } else {
@@ -251,7 +252,7 @@
                 do {
                   $Kn_C1 = rand(1,103);
                   $Kn_C2 = rand(1,103);
-                } while ($K_C1 == $K_C2 && $K_C1 == $Kn_C1 && $K_C1 == $Kn_C2 && $K_C2 == $Kn_C1 && $K_C2 == $Kn_C2 && $Kn_C1 == $Kn_C2);
+                } while ($K_C1 == $K_C2 && $K_C1 == $Kn_C1 && $K_C1 == $Kn_C2 && $K_C2 == $Kn_C1 && $K_C2 == $Kn_C2 && $Kn_C1 == $Kn_C2 && $Kn_C2 == $Kn_C1);
               ?>
               <tbody>
                 <tr>
@@ -422,12 +423,11 @@
                   $query_update_hasil = $db->query("UPDATE tb_training SET hasil='1' WHERE C_before=C_after");
                   $query_update_C = $db->query("UPDATE tb_training SET C_before=C_after");
                   $stop_iteration = 0;
-                  $query_check_hasil = $db->query("SELECT * FROM tb_training WHERE hasil='0'");
-                  while ($check_hasil = $query_check_hasil->fetch()) {
+                  $S = $cost_new_total - $cost_init_total;
+                  // $query_check_hasil = $db->query("SELECT * FROM tb_training WHERE hasil='0'");
+                  if ($S < 0) {
                     $stop_iteration++;
                   }
-
-                  $S = $cost_init_total - $cost_new_total;
                 ?>
                 <tr>
                   <td><?php echo number_format($cost_new_C2DC1, 3) ?></td>
@@ -489,7 +489,7 @@
       </div>
       <?php
           $cost_init_total = $cost_new_total;
-          if ($stop_iteration == 0 && $S > 0) {
+          if ($stop_iteration == 0) {
             break;
           }
         }

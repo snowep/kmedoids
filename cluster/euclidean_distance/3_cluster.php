@@ -42,11 +42,14 @@
                 $query_update_init = $db->query("UPDATE tb_training SET C3DC1='0', C3DC2='0', C3DC3='0', C_before='', C_after='', hasil='0'");
                 $S = 0;
 
-                do {
-                  $K_C1 = rand(1,103);
-                  $K_C2 = rand(1,103);
-                  $K_C3 = rand(1,103);
-                } while ($K_C1 == $K_C2 && $K_C1 == $K_C3 && $K_C2 == $K_C3);
+                // do {
+                //   $K_C1 = rand(1,103);
+                //   $K_C2 = rand(1,103);
+                //   $K_C3 = rand(1,103);
+                // } while ($K_C1 == $K_C2 && $K_C1 == $K_C3 && $K_C2 == $K_C3);
+                $K_C1 = 1;
+                $K_C2 = 2;
+                $K_C3 = 3;
               ?>
               <tbody>
                 <tr>
@@ -516,12 +519,11 @@
                   $query_update_hasil = $db->query("UPDATE tb_training SET hasil='1' WHERE C_before=C_after");
                   $query_update_C = $db->query("UPDATE tb_training SET C_before=C_after");
                   $stop_iteration = 0;
-                  $query_check_hasil = $db->query("SELECT * FROM tb_training WHERE hasil='0'");
-                  while ($check_hasil = $query_check_hasil->fetch()) {
+                  $S = $cost_init_total - $cost_new_total;
+                  // $query_check_hasil = $db->query("SELECT * FROM tb_training WHERE hasil='0'");
+                  if ($S < 0) {
                     $stop_iteration++;
                   }
-
-                  $S = $cost_init_total - $cost_new_total;
                 ?>
                 <tr>
                   <td><?php echo number_format($cost_new_C3DC1, 3) ?></td>
@@ -588,7 +590,7 @@
       </div>
       <?php
           $cost_init_total = $cost_new_total;
-          if ($stop_iteration == 0 && $S > 0) {
+          if ($stop_iteration == 0) {
             break;
           }
         }

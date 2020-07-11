@@ -44,17 +44,22 @@
                 $query_update_init = $db->query("UPDATE tb_training SET C5DC1='0', C5DC2='0', C5DC3='0', C5DC4='0', C5DC5='0', C_before='', C_after='', hasil='0'");
                 $S = 0;
 
-                do {
-                  $K_C1 = rand(1,103);
-                  $K_C2 = rand(1,103);
-                  $K_C3 = rand(1,103);
-                  $K_C4 = rand(1,103);
-                  $K_C5 = rand(1,103);
-                } while (
-                  $K_C1 == $K_C2 && $K_C1 == $K_C3 && $K_C1 == $K_C4 && $K_C1 == $K_C5 &&
-                  $K_C2 == $K_C3 && $K_C2 == $K_C4 && $K_C2 == $K_C5 &&
-                  $K_C3 == $K_C4 && $K_C3 == $K_C5 &&
-                  $K_C4 == $K_C5);
+                // do {
+                //   $K_C1 = rand(1,103);
+                //   $K_C2 = rand(1,103);
+                //   $K_C3 = rand(1,103);
+                //   $K_C4 = rand(1,103);
+                //   $K_C5 = rand(1,103);
+                // } while (
+                //   $K_C1 == $K_C2 && $K_C1 == $K_C3 && $K_C1 == $K_C4 && $K_C1 == $K_C5 &&
+                //   $K_C2 == $K_C3 && $K_C2 == $K_C4 && $K_C2 == $K_C5 &&
+                //   $K_C3 == $K_C4 && $K_C3 == $K_C5 &&
+                //   $K_C4 == $K_C5);
+                $K_C1 = 1;
+                $K_C2 = 2;
+                $K_C3 = 3;
+                $K_C4 = 4;
+                $K_C5 = 5;
               ?>
               <tbody>
                 <tr>
@@ -715,12 +720,12 @@
                   $query_update_hasil = $db->query("UPDATE tb_training SET hasil='1' WHERE C_before=C_after");
                   $query_update_C = $db->query("UPDATE tb_training SET C_before=C_after");
                   $stop_iteration = 0;
-                  $query_check_hasil = $db->query("SELECT * FROM tb_training WHERE hasil='0'");
-                  while ($check_hasil = $query_check_hasil->fetch()) {
+
+                  $S = $cost_new_total - $cost_init_total;
+                  // $query_check_hasil = $db->query("SELECT * FROM tb_training WHERE hasil='0'");
+                  if ($S < 0) {
                     $stop_iteration++;
                   }
-
-                  $S = $cost_init_total - $cost_new_total;
                 ?>
                 <tr>
                   <td><?php echo number_format($cost_new_C5DC1, 3) ?></td>
@@ -797,7 +802,7 @@
       </div>
       <?php
           $cost_init_total = $cost_new_total;
-          if ($stop_iteration == 0 && $S > 0) {
+          if ($stop_iteration == 0) {
             break;
           }
         }
@@ -1341,6 +1346,46 @@
                 <?php
                   $DB = ($D1 + $D2 + $D3 + $D4 + $D5) / 5;
                   $_SESSION['DB_C5'] = $DB;
+                  $query = $db->query("UPDATE tb_centroid SET
+                          Daya_WBP_1=$data_medoid_init_WBP_C1[1], Daya_LWBP_1=$data_medoid_init_LWBP_C1[1],
+                          Daya_WBP_2=$data_medoid_init_WBP_C1[2], Daya_LWBP_2=$data_medoid_init_LWBP_C1[2],
+                          Daya_WBP_3=$data_medoid_init_WBP_C1[3], Daya_LWBP_3=$data_medoid_init_LWBP_C1[3],
+                          Daya_WBP_4=$data_medoid_init_WBP_C1[4], Daya_LWBP_4=$data_medoid_init_LWBP_C1[4],
+                          Daya_WBP_5=$data_medoid_init_WBP_C1[5], Daya_LWBP_5=$data_medoid_init_LWBP_C1[5],
+                          Daya_WBP_6=$data_medoid_init_WBP_C1[6], Daya_LWBP_6=$data_medoid_init_LWBP_C1[6],
+                          Daya_WBP_7=$data_medoid_init_WBP_C1[7], Daya_LWBP_7=$data_medoid_init_LWBP_C1[7], username='' WHERE cluster='5' AND C='C1'");
+                  $query = $db->query("UPDATE tb_centroid SET
+                          Daya_WBP_1=$data_medoid_init_WBP_C2[1], Daya_LWBP_1=$data_medoid_init_LWBP_C2[1],
+                          Daya_WBP_2=$data_medoid_init_WBP_C2[2], Daya_LWBP_2=$data_medoid_init_LWBP_C2[2],
+                          Daya_WBP_3=$data_medoid_init_WBP_C2[3], Daya_LWBP_3=$data_medoid_init_LWBP_C2[3],
+                          Daya_WBP_4=$data_medoid_init_WBP_C2[4], Daya_LWBP_4=$data_medoid_init_LWBP_C2[4],
+                          Daya_WBP_5=$data_medoid_init_WBP_C2[5], Daya_LWBP_5=$data_medoid_init_LWBP_C2[5],
+                          Daya_WBP_6=$data_medoid_init_WBP_C2[6], Daya_LWBP_6=$data_medoid_init_LWBP_C2[6],
+                          Daya_WBP_7=$data_medoid_init_WBP_C2[7], Daya_LWBP_7=$data_medoid_init_LWBP_C2[7], username='' WHERE cluster='5' AND C='C2'");
+                  $query = $db->query("UPDATE tb_centroid SET
+                          Daya_WBP_1=$data_medoid_init_WBP_C3[1], Daya_LWBP_1=$data_medoid_init_LWBP_C3[1],
+                          Daya_WBP_2=$data_medoid_init_WBP_C3[2], Daya_LWBP_2=$data_medoid_init_LWBP_C3[2],
+                          Daya_WBP_3=$data_medoid_init_WBP_C3[3], Daya_LWBP_3=$data_medoid_init_LWBP_C3[3],
+                          Daya_WBP_4=$data_medoid_init_WBP_C3[4], Daya_LWBP_4=$data_medoid_init_LWBP_C3[4],
+                          Daya_WBP_5=$data_medoid_init_WBP_C3[5], Daya_LWBP_5=$data_medoid_init_LWBP_C3[5],
+                          Daya_WBP_6=$data_medoid_init_WBP_C3[6], Daya_LWBP_6=$data_medoid_init_LWBP_C3[6],
+                          Daya_WBP_7=$data_medoid_init_WBP_C3[7], Daya_LWBP_7=$data_medoid_init_LWBP_C3[7], username='' WHERE cluster='5' AND C='C3'");
+                  $query = $db->query("UPDATE tb_centroid SET
+                          Daya_WBP_1=$data_medoid_init_WBP_C4[1], Daya_LWBP_1=$data_medoid_init_LWBP_C4[1],
+                          Daya_WBP_2=$data_medoid_init_WBP_C4[2], Daya_LWBP_2=$data_medoid_init_LWBP_C4[2],
+                          Daya_WBP_3=$data_medoid_init_WBP_C4[3], Daya_LWBP_3=$data_medoid_init_LWBP_C4[3],
+                          Daya_WBP_4=$data_medoid_init_WBP_C4[4], Daya_LWBP_4=$data_medoid_init_LWBP_C4[4],
+                          Daya_WBP_5=$data_medoid_init_WBP_C4[5], Daya_LWBP_5=$data_medoid_init_LWBP_C4[5],
+                          Daya_WBP_6=$data_medoid_init_WBP_C4[6], Daya_LWBP_6=$data_medoid_init_LWBP_C4[6],
+                          Daya_WBP_7=$data_medoid_init_WBP_C4[7], Daya_LWBP_7=$data_medoid_init_LWBP_C4[7], username='' WHERE cluster='5' AND C='C4'");
+                  $query = $db->query("UPDATE tb_centroid SET
+                          Daya_WBP_1=$data_medoid_init_WBP_C5[1], Daya_LWBP_1=$data_medoid_init_LWBP_C5[1],
+                          Daya_WBP_2=$data_medoid_init_WBP_C5[2], Daya_LWBP_2=$data_medoid_init_LWBP_C5[2],
+                          Daya_WBP_3=$data_medoid_init_WBP_C5[3], Daya_LWBP_3=$data_medoid_init_LWBP_C5[3],
+                          Daya_WBP_4=$data_medoid_init_WBP_C5[4], Daya_LWBP_4=$data_medoid_init_LWBP_C5[4],
+                          Daya_WBP_5=$data_medoid_init_WBP_C5[5], Daya_LWBP_5=$data_medoid_init_LWBP_C5[5],
+                          Daya_WBP_6=$data_medoid_init_WBP_C5[6], Daya_LWBP_6=$data_medoid_init_LWBP_C5[6],
+                          Daya_WBP_7=$data_medoid_init_WBP_C5[7], Daya_LWBP_7=$data_medoid_init_LWBP_C5[7], username='' WHERE cluster='5' AND C='C5'");
                 ?>
                 <tr>
                   <td><?php echo number_format($DB, 3) ?></td>
