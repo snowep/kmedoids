@@ -14,7 +14,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="../data/data_training.php">Data Training</a>
-          <a class="dropdown-item" href="#">Data Testing</a>
+          <a class="dropdown-item" href="../data/data_testing.php">Data Testing</a>
         </div>
       </li>
       <li class="nav-item dropdown">
