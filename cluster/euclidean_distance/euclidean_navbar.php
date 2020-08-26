@@ -17,7 +17,7 @@
           <a class="dropdown-item" href="../data/data_testing.php">Data Testing</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Manhattan Distance
         </a>
@@ -28,7 +28,7 @@
           <a class="dropdown-item" href="../manhattan_distance/5_cluster.php">5 Cluster</a>
           <a class="dropdown-item" href="../manhattan_distance/6_cluster.php">6 Cluster</a>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Euclidean Distance

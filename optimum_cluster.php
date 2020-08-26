@@ -24,7 +24,7 @@
                 <tr>
                   <th>Cluster</th>
                   <th>Euclidean Distance</th>
-                  <th>Manhattan Distance</th>
+                  <!-- <th>Manhattan Distance</th> -->
                 </tr>
               </thead>
               <tbody>
@@ -35,18 +35,20 @@
                   $DB5 = $_SESSION['DB_C5'];
                   $DB6 = $_SESSION['DB_C6'];
 
-                  $DBM2 = $_SESSION['DBM_C2'];
-                  $DBM3 = $_SESSION['DBM_C3'];
-                  $DBM4 = $_SESSION['DBM_C4'];
-                  $DBM5 = $_SESSION['DBM_C5'];
-                  $DBM6 = $_SESSION['DBM_C6'];
+                  // $DBM2 = $_SESSION['DBM_C2'];
+                  // $DBM3 = $_SESSION['DBM_C3'];
+                  // $DBM4 = $_SESSION['DBM_C4'];
+                  // $DBM5 = $_SESSION['DBM_C5'];
+                  // $DBM6 = $_SESSION['DBM_C6'];
 
                   for ($i=2; $i < 7; $i++) {
                 ?>
                 <tr>
                   <td><?php echo $i ?></td>
                   <td><?php echo number_format($_SESSION['DB_C'."$i".''], 3) ?></td>
-                  <td><?php echo number_format($_SESSION['DBM_C'."$i".''], 3) ?></td>
+                  <!-- <td>
+                    <?php //echo number_format($_SESSION['DBM_C'."$i".''], 3) ?>
+                  </td> -->
                 </tr>
                 <?php
                   }
@@ -61,7 +63,7 @@
           <h4>Optimum Cluster:
             <?php
               $DB_optimum = min($DB2,$DB3,$DB4,$DB5,$DB6);
-              $DBM_optimum = min($DBM2,$DBM3,$DBM4,$DBM5,$DBM6);
+              // $DBM_optimum = min($DBM2,$DBM3,$DBM4,$DBM5,$DBM6);
               echo number_format($DB_optimum, 3);
 
               switch ($DB_optimum) {

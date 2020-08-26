@@ -519,7 +519,7 @@
                   $query_update_hasil = $db->query("UPDATE tb_training SET hasil='1' WHERE C_before=C_after");
                   $query_update_C = $db->query("UPDATE tb_training SET C_before=C_after");
                   $stop_iteration = 0;
-                  $S = $cost_init_total - $cost_new_total;
+                  $S = $cost_new_total - $cost_init_total;
                   // $query_check_hasil = $db->query("SELECT * FROM tb_training WHERE hasil='0'");
                   if ($S < 0) {
                     $stop_iteration++;
